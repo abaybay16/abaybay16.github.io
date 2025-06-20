@@ -73,6 +73,23 @@
       width: 40px;
       height: 40px;
     }
+    /* Logo pojok kanan atas */
+    .top-icons {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      gap: 10px;
+      z-index: 999;
+    }
+    .top-icons a img {
+      width: 30px;
+      height: 30px;
+      transition: transform 0.3s;
+    }
+    .top-icons a img:hover {
+      transform: scale(1.2);
+    }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -80,6 +97,26 @@
   </style>
 </head>
 <body>
+
+  <!-- Ikon pojok kanan atas -->
+  <div class="top-icons">
+    <a href="https://www.linux.org" target="_blank" title="Linux">
+      <img src="https://cdn-icons-png.flaticon.com/512/6124/6124991.png" alt="Linux">
+    </a>
+    <a href="https://github.com" target="_blank" title="GitHub">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
+    </a>
+    <a href="https://www.docker.com" target="_blank" title="Docker">
+      <img src="https://cdn-icons-png.flaticon.com/512/919/919853.png" alt="Docker">
+    </a>
+    <a href="https://code.visualstudio.com" target="_blank" title="VS Code">
+      <img src="https://cdn-icons-png.flaticon.com/512/906/906324.png" alt="VS Code">
+    </a>
+    <a href="https://awsacademy.instructure.com" target="_blank" title="AWS Academy">
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="AWS">
+    </a>
+  </div>
+
   <div class="container">
     <img class="profile" src="IMG-20250421-WA0008.jpg" alt="Foto Abay">
     <h1>Halo, Saya Abhi Ahmad 👋</h1>
