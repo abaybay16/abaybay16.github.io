@@ -22,64 +22,56 @@
       background: linear-gradient(to right, #141e30, #243b55);
       color: white;
       min-height: 100vh;
-      padding: 40px 20px;
+      padding-top: 80px;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
     }
 
-    /* === NAVBAR ala Rexus === */
+    /* Navbar mirip Rexus */
     .rexus-navbar {
       position: fixed;
       top: 0;
-      left: 0;
       width: 100%;
-      background: white;
+      height: 60px;
+      background-color: white;
       color: black;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 10px 30px;
+      justify-content: space-between;
+      padding: 0 30px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      z-index: 9999;
-      font-family: 'Poppins', sans-serif;
+      z-index: 1000;
     }
-    .rexus-navbar img {
-      height: 35px;
+    .rexus-navbar .logo {
+      font-weight: bold;
+      font-size: 1.2em;
     }
-    .rexus-navbar a {
-      margin: 0 10px;
+    .rexus-navbar .menu {
+      display: flex;
+      gap: 20px;
+      font-size: 0.9em;
+    }
+    .rexus-navbar .menu a {
       text-decoration: none;
       color: black;
-      font-weight: bold;
-      font-size: 0.95em;
+      font-weight: 500;
     }
-    .rexus-center a:hover,
-    .rexus-right a:hover {
-      color: #007bff;
-    }
-    .rexus-left, .rexus-center, .rexus-right {
+    .rexus-navbar .rexus-right {
       display: flex;
       align-items: center;
+      gap: 15px;
     }
-    .rexus-center {
-      flex: 1;
-      justify-content: center;
-    }
-    .rexus-right input {
-      padding: 6px 10px;
-      border-radius: 20px;
+    .rexus-navbar input[type="text"] {
+      padding: 5px;
+      border-radius: 5px;
       border: 1px solid #ccc;
-      outline: none;
-      font-size: 0.9em;
-      margin-right: 10px;
     }
 
     .container {
       animation: fadeIn 1s ease-in-out;
       max-width: 800px;
-      margin-top: 100px; /* Supaya tidak ketabrak navbar */
     }
     img.profile {
       width: 150px;
@@ -132,7 +124,7 @@
 
     .top-icons {
       position: fixed;
-      top: 60px;
+      top: 70px;
       right: 10px;
       display: flex;
       gap: 10px;
@@ -187,12 +179,10 @@
 </head>
 <body>
 
-  <!-- === Navbar Ala Rexus === -->
+  <!-- Navbar Atas -->
   <div class="rexus-navbar">
-    <div class="rexus-left">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Letter_A_blue.png" alt="Logo Abay" />
-    </div>
-    <div class="rexus-center">
+    <div class="logo">ABAYBAY16</div>
+    <div class="menu">
       <a href="#">DATA</a>
       <a href="#">PRODUK</a>
       <a href="#">BLOG</a>
@@ -200,7 +190,7 @@
     </div>
     <div class="rexus-right">
       <a href="#">LOGIN & REGISTER</a>
-      <input type="text" placeholder="Search for products" />
+      <input type="text" id="searchBar" placeholder="Search di Google" onkeydown="searchGoogle(event)">
       <span>🔀</span>
       <span>🤍</span>
       <span>🛒</span>
@@ -226,7 +216,6 @@
     </a>
   </div>
 
-  <!-- Konten utama -->
   <div class="container">
     <img class="profile" src="abay123.jpg" alt="Foto Abay">
     <h1>Halo, Saya Abhi Ahmad 👋</h1>
@@ -266,5 +255,18 @@
       </p>
     </div>
   </div>
+
+  <script>
+    function searchGoogle(event) {
+      if (event.key === "Enter") {
+        const query = document.getElementById("searchBar").value.trim();
+        if (query !== "") {
+          const googleURL = "https://www.google.com/search?q=" + encodeURIComponent(query);
+          window.open(googleURL, "_blank");
+        }
+      }
+    }
+  </script>
+
 </body>
 </html>
