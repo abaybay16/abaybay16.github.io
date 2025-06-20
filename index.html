@@ -28,9 +28,58 @@
       align-items: center;
       text-align: center;
     }
+
+    /* === NAVBAR ala Rexus === */
+    .rexus-navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: white;
+      color: black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      z-index: 9999;
+      font-family: 'Poppins', sans-serif;
+    }
+    .rexus-navbar img {
+      height: 35px;
+    }
+    .rexus-navbar a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-size: 0.95em;
+    }
+    .rexus-center a:hover,
+    .rexus-right a:hover {
+      color: #007bff;
+    }
+    .rexus-left, .rexus-center, .rexus-right {
+      display: flex;
+      align-items: center;
+    }
+    .rexus-center {
+      flex: 1;
+      justify-content: center;
+    }
+    .rexus-right input {
+      padding: 6px 10px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      outline: none;
+      font-size: 0.9em;
+      margin-right: 10px;
+    }
+
     .container {
       animation: fadeIn 1s ease-in-out;
       max-width: 800px;
+      margin-top: 100px; /* Supaya tidak ketabrak navbar */
     }
     img.profile {
       width: 150px;
@@ -83,7 +132,7 @@
 
     .top-icons {
       position: fixed;
-      top: 10px;
+      top: 60px;
       right: 10px;
       display: flex;
       gap: 10px;
@@ -138,6 +187,26 @@
 </head>
 <body>
 
+  <!-- === Navbar Ala Rexus === -->
+  <div class="rexus-navbar">
+    <div class="rexus-left">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Letter_A_blue.png" alt="Logo Abay" />
+    </div>
+    <div class="rexus-center">
+      <a href="#">DATA</a>
+      <a href="#">PRODUK</a>
+      <a href="#">BLOG</a>
+      <a href="#">DUKUNGAN</a>
+    </div>
+    <div class="rexus-right">
+      <a href="#">LOGIN & REGISTER</a>
+      <input type="text" placeholder="Search for products" />
+      <span>🔀</span>
+      <span>🤍</span>
+      <span>🛒</span>
+    </div>
+  </div>
+
   <!-- Logo kanan atas -->
   <div class="top-icons">
     <a href="https://www.linux.org" target="_blank" title="Linux">
@@ -157,6 +226,7 @@
     </a>
   </div>
 
+  <!-- Konten utama -->
   <div class="container">
     <img class="profile" src="abay123.jpg" alt="Foto Abay">
     <h1>Halo, Saya Abhi Ahmad 👋</h1>
