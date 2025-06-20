@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Abaybay16 | Website Pribadi</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     * {
       margin: 0;
@@ -51,16 +52,25 @@
     }
     .socials {
       margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
     }
     .socials a {
-      margin: 0 10px;
       text-decoration: none;
       color: #00c6ff;
       font-weight: bold;
       transition: 0.3s;
+      display: inline-block;
     }
     .socials a:hover {
       color: #fff;
+    }
+    .socials a i {
+      display: block;
+      margin-top: 5px;
+      font-size: 2em;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
@@ -82,10 +92,18 @@
     </div>
 
     <div class="socials">
-      <a href="https://facebook.com/Abi Ahmad" target="_blank">Facebook</a>
-      <a href="https://instagram.com/_abiy16" target="_blank">Instagram</a>
-      <a href="https://tiktok.com/@Abay_16" target="_blank">TikTok</a>
-      <a href="https://wa.me/085820147916" target="_blank">WhatsApp</a>
+      <a href="https://facebook.com/Abi Ahmad" target="_blank">
+        Facebook<br><i class="fab fa-facebook"></i>
+      </a>
+      <a href="https://instagram.com/_abiy16" target="_blank">
+        Instagram<br><i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://tiktok.com/@Abay_16" target="_blank">
+        TikTok<br><i class="fab fa-tiktok"></i>
+      </a>
+      <a href="https://wa.me/085820147916" target="_blank">
+        WhatsApp<br><i class="fab fa-whatsapp"></i>
+      </a>
     </div>
   </div>
 </body>
