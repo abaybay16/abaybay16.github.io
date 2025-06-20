@@ -15,37 +15,52 @@
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(to right, #141e30, #243b55);
       color: white;
-      height: 100vh;
+      min-height: 100vh;
+      padding: 40px 20px;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 20px;
     }
     .container {
       animation: fadeIn 1s ease-in-out;
+      max-width: 800px;
+    }
+    img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #00c6ff;
+      margin-bottom: 20px;
     }
     h1 {
-      font-size: 3em;
+      font-size: 2.5em;
       margin-bottom: 10px;
     }
-    p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
+    .bio {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      text-align: left;
     }
-    .btn {
-      background-color: #00c6ff;
-      color: #fff;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 30px;
-      font-size: 1em;
-      cursor: pointer;
-      transition: 0.3s;
+    .bio p {
+      margin-bottom: 10px;
+      font-size: 1.1em;
+    }
+    .socials {
+      margin-top: 20px;
+    }
+    .socials a {
+      margin: 0 10px;
       text-decoration: none;
+      color: #00c6ff;
+      font-weight: bold;
+      transition: 0.3s;
     }
-    .btn:hover {
-      background-color: #0072ff;
+    .socials a:hover {
+      color: #fff;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
@@ -55,9 +70,23 @@
 </head>
 <body>
   <div class="container">
-    <h1>Halo, Saya Abay 👋</h1>
-    <p>Selamat datang di website pribadi saya.<br>Stay tuned untuk update keren selanjutnya!</p>
-    <a href="https://github.com/abaybay16" class="btn" target="_blank">Lihat GitHub Saya</a>
+    <img src="foto.jpg" alt="Foto Abay">
+    <h1>Halo, Saya Abhi Ahmad 👋</h1>
+    <p>Selamat datang di website pribadi saya!</p>
+
+    <div class="bio">
+      <p><strong>Nama:</strong> Abhi Ahmad</p>
+      <p><strong>Alamat:</strong> Porame</p>
+      <p><strong>Kabupaten:</strong> Sigi</p>
+      <p><strong>Provinsi:</strong> Sulawesi Tengah</p>
+    </div>
+
+    <div class="socials">
+      <a href="https://facebook.com/ABHI AHMAD" target="_blank">Facebook</a>
+      <a href="https://instagram.com/_abiy16" target="_blank">Instagram</a>
+      <a href="https://tiktok.com/@Abay16" target="_blank">TikTok</a>
+      <a href="https://wa.me/0858201479116" target="_blank">WhatsApp</a>
+    </div>
   </div>
 </body>
 </html>
