@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Abaybay16 | Website Pribadi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
   <style>
     * {
       margin: 0;
@@ -37,6 +40,7 @@
     h1 {
       font-size: 2.5em;
       margin-bottom: 10px;
+      font-family: 'Orbitron', sans-serif;
     }
     .bio {
       background-color: rgba(255, 255, 255, 0.1);
@@ -74,7 +78,7 @@
       height: 40px;
     }
 
-    /* Ikon pojok kanan atas */
+    /* Logo kanan atas */
     .top-icons {
       position: fixed;
       top: 10px;
@@ -96,6 +100,35 @@
       transform: scale(1.2);
     }
 
+    /* Deskripsi Website */
+    .description {
+      background-color: rgba(255, 255, 255, 0.1);
+      margin-top: 40px;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: left;
+      width: 100%;
+      max-width: 800px;
+    }
+    .description h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2em;
+      color: #00c6ff;
+      margin-bottom: 10px;
+    }
+    .description p {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3em;
+      line-height: 1.6;
+      color: #ffffff;
+      outline: none;
+    }
+    .description p:focus {
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 5px;
+      border-radius: 5px;
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -104,7 +137,7 @@
 </head>
 <body>
 
-  <!-- Ikon di pojok kanan atas -->
+  <!-- Logo kanan atas -->
   <div class="top-icons">
     <a href="https://www.linux.org" target="_blank" title="Linux">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
@@ -124,7 +157,7 @@
   </div>
 
   <div class="container">
-    <img class="profile" src="IMG-20250421-WA0008.jpg" alt="Abay">
+    <img class="profile" src="IMG-20250421-WA0008.jpg" alt="Foto Abay">
     <h1>Halo, Saya Abhi Ahmad 👋</h1>
     <p>Selamat datang di website pribadi saya!</p>
 
@@ -153,6 +186,15 @@
         <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
       </a>
     </div>
+
+    <!-- Deskripsi Website -->
+    <div class="description">
+      <h2>Deskripsi Website</h2>
+      <p contenteditable="true" spellcheck="false">
+        Ini adalah website pribadi Abhi Ahmad. Kamu bisa menulis deskripsi apa saja di sini. Klik dan edit langsung teks ini sesuai keinginanmu ✍️🔥
+      </p>
+    </div>
+
   </div>
 </body>
 </html>
