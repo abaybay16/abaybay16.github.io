@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Abaybay16 | Website Pribadi</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     * {
       margin: 0;
@@ -27,7 +26,7 @@
       animation: fadeIn 1s ease-in-out;
       max-width: 800px;
     }
-    img {
+    img.profile {
       width: 150px;
       height: 150px;
       object-fit: cover;
@@ -51,26 +50,28 @@
       font-size: 1.1em;
     }
     .socials {
-      margin-top: 20px;
+      margin-top: 30px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 30px;
     }
     .socials a {
       text-decoration: none;
       color: #00c6ff;
       font-weight: bold;
       transition: 0.3s;
-      display: inline-block;
+      text-align: center;
+      width: 120px;
     }
     .socials a:hover {
       color: #fff;
     }
-    .socials a i {
+    .socials img {
       display: block;
-      margin-top: 5px;
-      font-size: 2em;
+      margin: 8px auto 0;
+      width: 40px;
+      height: 40px;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
@@ -80,7 +81,7 @@
 </head>
 <body>
   <div class="container">
-    <img src="IMG-20250421-WA0008.jpg" alt="Foto Abay">
+    <img class="profile" src="IMG-20250421-WA0008.jpg" alt="Foto Abay">
     <h1>Halo, Saya Abhi Ahmad 👋</h1>
     <p>Selamat datang di website pribadi saya!</p>
 
@@ -93,16 +94,20 @@
 
     <div class="socials">
       <a href="https://facebook.com/Abi Ahmad" target="_blank">
-        Facebook<br><i class="fab fa-facebook"></i>
+        Facebook
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
       </a>
       <a href="https://instagram.com/_abiy16" target="_blank">
-        Instagram<br><i class="fab fa-instagram"></i>
+        Instagram
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
       </a>
       <a href="https://tiktok.com/@Abay_16" target="_blank">
-        TikTok<br><i class="fab fa-tiktok"></i>
+        TikTok
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png" alt="TikTok">
       </a>
       <a href="https://wa.me/085820147916" target="_blank">
-        WhatsApp<br><i class="fab fa-whatsapp"></i>
+        WhatsApp
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
       </a>
     </div>
   </div>
