@@ -5,17 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Abaybay16 | Website Pribadi</title>
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/5527/5527216.png">
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat&family=Orbitron:wght@500&display=swap" rel="stylesheet">
 
   <style>
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
     }
     body {
       font-family: 'Poppins', sans-serif;
@@ -29,7 +24,6 @@
       text-align: center;
     }
 
-    /* Navbar mirip Rexus */
     .rexus-navbar {
       position: fixed;
       top: 0;
@@ -181,11 +175,39 @@
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+
+    /* Chatbot */
+    #chat-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      z-index: 1001;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+    }
+    #chat-messages {
+      max-height: 250px;
+      overflow-y: auto;
+      padding: 10px;
+      font-size: 14px;
+      color: black;
+    }
+    #chat-input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-top: 1px solid #ccc;
+      font-size: 14px;
+      outline: none;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Navbar Atas -->
   <div class="rexus-navbar">
     <div class="logo">
       <a href="https://smkn3sigi.sch.id" target="_blank" title="SMKN 3 Sigi">
@@ -208,7 +230,6 @@
     </div>
   </div>
 
-  <!-- Logo kanan atas -->
   <div class="top-icons">
     <a href="https://www.linux.org" target="_blank" title="Linux">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
@@ -257,13 +278,20 @@
       </a>
     </div>
 
-    <!-- Deskripsi Website -->
     <div class="description">
       <h2>Deskripsi Website</h2>
       <p contenteditable="true" spellcheck="false">
         Ini adalah website pribadi Abhi Ahmad. Kamu bisa menulis deskripsi apa saja di sini. Klik dan edit langsung teks ini sesuai keinginanmu ✍️🔥
       </p>
     </div>
+  </div>
+
+  <!-- Chatbot AI -->
+  <div id="chat-container">
+    <div id="chat-messages">
+      <div><b>AI:</b> Hai! Aku Chatbot buatan Abay 🧠✨</div>
+    </div>
+    <input type="text" id="chat-input" placeholder="Tulis pesan dan tekan Enter...">
   </div>
 
   <script>
@@ -276,6 +304,30 @@
         }
       }
     }
+
+    const input = document.getElementById("chat-input");
+    input.addEventListener("keypress", function (e) {
+      if (e.key === "Enter" && this.value.trim() !== "") {
+        const msg = this.value;
+        const chatBox = document.getElementById("chat-messages");
+        chatBox.innerHTML += `<div><b>Kamu:</b> ${msg}</div>`;
+
+        // Jawaban AI simple
+        let reply = "Hmm, aku belum paham maksudmu 😅";
+        const lowerMsg = msg.toLowerCase();
+        if (lowerMsg.includes("hai") || lowerMsg.includes("halo")) {
+          reply = "Hai juga! Apa kabar kamu? 😄";
+        } else if (lowerMsg.includes("siapa kamu")) {
+          reply = "Aku chatbot buatan Abhi Ahmad yang ganteng 💙";
+        } else if (lowerMsg.includes("makasih")) {
+          reply = "Sama-samaa, Abay sayang 🥰";
+        }
+
+        chatBox.innerHTML += `<div><b>AI:</b> ${reply}</div>`;
+        this.value = "";
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }
+    });
   </script>
 
 </body>
