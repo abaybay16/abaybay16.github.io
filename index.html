@@ -276,7 +276,7 @@
         const chatBox = document.getElementById("chat-messages");
         chatBox.innerHTML += `<div><b>Kamu:</b> ${msg}</div>`;
 
-        fetch("https://abay-chatbot.abiahmad32.repl.co", {
+          fetch("https://abay-chatbot.abiahmad32.replit.dev", 
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ msg: msg })
