@@ -9,7 +9,7 @@
   <meta name="author" content="Abhi Ahmad">
   <meta name="google-site-verification" content="5wb5iD6Qd_4n-5-jDRWJ-uYwutHZPvZMRiGgRAYQ81A" />
   <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/5527/5527216.png">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat&family=Orbitron:wght@500&family=Rampart+One&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -37,44 +37,44 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
       z-index: 1000;
     }
-    .rexus-navbar .logo {
-      font-weight: bold;
-      font-size: 1.2em;
-      display: flex;
-      align-items: center;
-    }
+    .rexus-navbar .logo { font-weight: bold; font-size: 1.2em; display: flex; align-items: center; }
     .rexus-navbar .logo img { height: 40px; margin-right: 10px; }
-    .rexus-navbar .menu {
-      display: flex;
-      gap: 20px;
-      font-size: 0.9em;
-    }
+    .rexus-navbar .menu { display: flex; gap: 20px; font-size: 0.9em; }
     .rexus-navbar .menu a {
-      text-decoration: none;
-      color: black;
-      font-weight: 500;
+      text-decoration: none; color: black; font-weight: 500;
     }
     .rexus-navbar .rexus-right {
-      display: flex;
-      align-items: center;
-      gap: 15px;
+      display: flex; align-items: center; gap: 15px;
     }
     .rexus-navbar input[type="text"] {
-      padding: 5px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
+      padding: 5px; border-radius: 5px; border: 1px solid #ccc;
     }
     .container {
       animation: fadeIn 1s ease-in-out;
       max-width: 800px;
     }
-    .welcome {
+    .welcome-wrapper {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      height: 60px;
+      margin-bottom: 30px;
+    }
+    .welcome-text {
+      font-family: 'Rampart One', cursive;
       font-size: 2.5em;
       font-weight: bold;
-      color: #0f0;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 4px #000;
-      font-family: 'Orbitron', sans-serif;
+      white-space: nowrap;
+      position: absolute;
+      animation: moveText 12s linear infinite;
+      background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet);
+      background-size: 400%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    @keyframes moveText {
+      0% { left: 100%; }
+      100% { left: -100%; }
     }
     h1 {
       font-size: 2.2em;
@@ -217,7 +217,9 @@
   </div>
 
   <div class="container">
-    <div class="welcome">WELCOME TO WEBSITE ABAY</div>
+    <div class="welcome-wrapper">
+      <div class="welcome-text">WELCOME TO WEBSITE ABAY</div>
+    </div>
     <h1>Halo, Saya Abhi Ahmad 👋</h1>
     <p>Selamat datang di website pribadi saya!</p>
     <div class="bio">
