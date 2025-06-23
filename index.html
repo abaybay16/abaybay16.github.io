@@ -91,6 +91,20 @@
       margin: 20px 0;
     }
 
+    .welcome-text span {
+      animation: colorLoop 2s infinite alternate;
+      display: inline-block;
+    }
+
+    @keyframes colorLoop {
+      0% { color: red; }
+      20% { color: orange; }
+      40% { color: yellow; }
+      60% { color: green; }
+      80% { color: blue; }
+      100% { color: violet; }
+    }
+
     .foto-abay {
       width: 180px;
       height: 180px;
@@ -230,7 +244,15 @@
   </div>
 
   <div class="container">
-    <div class="welcome-text">WELCOME TO WEBSITE ABAY</div>
+    <div class="welcome-text">
+      <span>W</span><span>E</span><span>L</span><span>C</span><span>O</span><span>M</span><span>E</span>
+      <span>&nbsp;</span>
+      <span>T</span><span>O</span>
+      <span>&nbsp;</span>
+      <span>W</span><span>E</span><span>B</span><span>S</span><span>I</span><span>T</span><span>E</span>
+      <span>&nbsp;</span>
+      <span>A</span><span>B</span><span>A</span><span>Y</span>
+    </div>
 
     <img src="abay123.jpg" alt="Foto Abay" class="foto-abay" onclick="openModal()">
 
@@ -312,7 +334,7 @@
       }
     });
 
-    // Background slider pelan tiap 5 detik
+    // Geser background tiap 5 detik
     let pos = 0;
     const bg = document.getElementById("bgSlider");
     setInterval(() => {
