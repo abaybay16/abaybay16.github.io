@@ -10,6 +10,9 @@
   <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/5527/5527216.png">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat&family=Orbitron:wght@500&family=Rampart+One&family=Luckiest+Guy&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-image: url('Naruto Uzumaki 4K Photo.jpg');
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
@@ -30,11 +33,12 @@
       left: 0;
       width: 100%;
       height: 100%;
+      background-image: var(--bg-image);
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       z-index: -1;
-      opacity: 0.2;
+      opacity: 0.3;
       transition: background-image 1s ease-in-out;
     }
 
@@ -59,9 +63,6 @@
     .rexus-navbar .menu a {
       text-decoration: none; color: black; font-weight: 500;
     }
-    .rexus-navbar .rexus-right {
-      display: flex; align-items: center; gap: 15px;
-    }
     .rexus-navbar input[type="text"] {
       padding: 5px; border-radius: 5px; border: 1px solid #ccc;
     }
@@ -77,7 +78,6 @@
       gap: 5px;
       margin-bottom: 10px;
     }
-
     .welcome-text span {
       animation: colorLoop 2s infinite alternate;
     }
@@ -227,6 +227,7 @@
   </style>
 </head>
 <body>
+  <!-- Navbar -->
   <div class="rexus-navbar">
     <div class="logo">
       <a href="https://smkn3sigi.sch.id" target="_blank"><img src="smk3sigi.png" alt="SMKN 3 SIGI"></a>
@@ -235,6 +236,7 @@
     <input type="text" id="searchBar" placeholder="Search di Google" onkeydown="searchGoogle(event)">
   </div>
 
+  <!-- Ikon -->
   <div class="top-icons">
     <a href="https://www.linux.org" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"></a>
     <a href="https://github.com" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"></a>
@@ -243,24 +245,18 @@
     <a href="https://awsacademy.instructure.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/873/873120.png"></a>
   </div>
 
+  <!-- Konten -->
   <div class="container">
     <div class="welcome-text">
       <span>W</span><span>E</span><span>L</span><span>C</span><span>O</span><span>M</span><span>E</span>
-      <span>&nbsp;</span>
-      <span>T</span><span>O</span>
-      <span>&nbsp;</span>
+      <span>&nbsp;</span><span>T</span><span>O</span><span>&nbsp;</span>
       <span>W</span><span>E</span><span>B</span><span>S</span><span>I</span><span>T</span><span>E</span>
-      <span>&nbsp;</span>
-      <span>A</span><span>B</span><span>A</span><span>Y</span>
+      <span>&nbsp;</span><span>A</span><span>B</span><span>A</span><span>Y</span>
     </div>
 
     <img src="abay123.jpg" alt="Foto Abay" class="foto-abay" onclick="openModal()">
     <audio controls autoplay loop>
-<<<<<<< HEAD
       <source src="DJ SOUND JJ SEREM V8 FUL BAS KANE COCOK BUAT DI KAMAR MENGKANE JEDAGJEDUG VIRAL TIKTOK TERBARU 2025🎧.mp3" type="audio/mpeg">
-=======
-      <source src="DJ SOUND JJ.mp3" type="audio/mpeg">
->>>>>>> f2ca135de84a9463544cf35f13292c7b4ed9a6f7
     </audio>
 
     <h1>Halo, Saya Abhi Ahmad 👋</h1>
@@ -339,7 +335,6 @@
       document.getElementById("fotoModal").style.display = "none";
     }
 
-    // 🔄 Background otomatis berganti
     const images = [
       'Naruto Uzumaki 4K Photo.jpg',
       'download (5).jpg',
@@ -349,9 +344,8 @@
     ];
     let bgIndex = 0;
     setInterval(() => {
-      document.body.style.setProperty('--bg-image', `url(${images[bgIndex]})`);
-      document.querySelector('body::before').style.backgroundImage = `url(${images[bgIndex]})`;
       bgIndex = (bgIndex + 1) % images.length;
+      document.documentElement.style.setProperty('--bg-image', `url('${images[bgIndex]}')`);
     }, 10000);
   </script>
 </body>
