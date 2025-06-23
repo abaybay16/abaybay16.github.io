@@ -8,7 +8,7 @@
   <meta name="keywords" content="Abaybay16, Abhi Ahmad, SMK 3 Sigi, Sigi, Website pribadi">
   <meta name="author" content="Abhi Ahmad, Abay">
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5527/5527216.png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Luckiest+Guy&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins&family=Rubik+Wet+Paint&family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -18,9 +18,9 @@
       padding-top: 80px;
       min-height: 100vh;
       overflow-x: hidden;
-      text-align: center;
       background-color: black;
       position: relative;
+      text-align: center;
     }
 
     .bg-slider {
@@ -86,22 +86,18 @@
     }
 
     .welcome-text {
-      font-family: 'Luckiest Guy', cursive;
-      font-size: 2.4em;
+      font-family: 'Rubik Wet Paint', cursive;
+      font-size: 2.6em;
       margin: 20px 0;
-    }
-
-    .welcome-text span {
+      letter-spacing: 3px;
       animation: colorLoop 2s infinite alternate;
-      display: inline-block;
     }
 
     @keyframes colorLoop {
-      0% { color: red; }
-      20% { color: orange; }
-      40% { color: yellow; }
-      60% { color: green; }
-      80% { color: blue; }
+      0%   { color: red; }
+      25%  { color: yellow; }
+      50%  { color: lime; }
+      75%  { color: aqua; }
       100% { color: violet; }
     }
 
@@ -110,19 +106,37 @@
       height: 180px;
       border-radius: 50%;
       border: 6px solid red;
-      margin: 20px auto;
+      margin: 20px auto 10px;
       object-fit: cover;
       cursor: pointer;
       transition: transform 0.3s;
+      display: block;
     }
 
     .foto-abay:hover {
       transform: scale(1.05);
     }
 
+    .music-player {
+      margin: 10px auto 30px;
+      padding: 15px;
+      background: rgba(255, 0, 0, 0.1);
+      border-radius: 15px;
+      width: fit-content;
+      animation: fireGlow 1s infinite alternate;
+      box-shadow: 0 0 20px rgba(255, 69, 0, 0.7);
+    }
+
+    @keyframes fireGlow {
+      0% { box-shadow: 0 0 10px red; }
+      50% { box-shadow: 0 0 20px orange; }
+      100% { box-shadow: 0 0 30px yellow; }
+    }
+
     h1 {
       font-size: 2em;
       font-family: 'Orbitron', sans-serif;
+      margin-top: 10px;
     }
 
     .bio, .description {
@@ -146,6 +160,11 @@
       color: #00c6ff;
       text-align: center;
       width: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.9em;
     }
 
     .socials img {
@@ -244,21 +263,15 @@
   </div>
 
   <div class="container">
-    <div class="welcome-text">
-      <span>W</span><span>E</span><span>L</span><span>C</span><span>O</span><span>M</span><span>E</span>
-      <span>&nbsp;</span>
-      <span>T</span><span>O</span>
-      <span>&nbsp;</span>
-      <span>W</span><span>E</span><span>B</span><span>S</span><span>I</span><span>T</span><span>E</span>
-      <span>&nbsp;</span>
-      <span>A</span><span>B</span><span>A</span><span>Y</span>
-    </div>
+    <div class="welcome-text">WELCOME TO WEBSITE ABAY</div>
 
     <img src="abay123.jpg" alt="Foto Abay" class="foto-abay" onclick="openModal()">
 
-    <audio controls autoplay loop>
-      <source src="DJ SOUND JJ SEREM V8 FUL BAS KANE COCOK BUAT DI KAMAR MENGKANE JEDAGJEDUG VIRAL TIKTOK TERBARU 2025🎧.mp3" type="audio/mpeg">
-    </audio>
+    <div class="music-player">
+      <audio controls autoplay loop>
+        <source src="DJ SOUND JJ SEREM V8 FUL BAS KANE COCOK BUAT DI KAMAR MENGKANE JEDAGJEDUG VIRAL TIKTOK TERBARU 2025🎧.mp3" type="audio/mpeg">
+      </audio>
+    </div>
 
     <h1>Halo, Saya Abhi Ahmad 👋</h1>
     <p>Selamat datang di website pribadi saya!</p>
@@ -271,10 +284,10 @@
     </div>
 
     <div class="socials">
-      <a href="https://facebook.com/Abi Ahmad" target="_blank">Facebook <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
-      <a href="https://instagram.com/_abiy16" target="_blank">Instagram <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"></a>
-      <a href="https://tiktok.com/Abay_1610" target="_blank">TikTok <img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png"></a>
-      <a href="https://wa.me/085820147916" target="_blank">WhatsApp <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"></a>
+      <a href="https://facebook.com/Abi Ahmad" target="_blank">Facebook<img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
+      <a href="https://instagram.com/_abiy16" target="_blank">Instagram<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"></a>
+      <a href="https://tiktok.com/Abay_1610" target="_blank">TikTok<img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png"></a>
+      <a href="https://wa.me/085820147916" target="_blank">WhatsApp<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"></a>
     </div>
 
     <div class="description">
@@ -334,7 +347,7 @@
       }
     });
 
-    // Geser background tiap 5 detik
+    // Background slide
     let pos = 0;
     const bg = document.getElementById("bgSlider");
     setInterval(() => {
