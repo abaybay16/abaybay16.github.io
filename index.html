@@ -7,53 +7,38 @@
   <meta name="description" content="Website pribadi Abhi Ahmad dari Porame, Sigi.">
   <meta name="keywords" content="Abaybay16, Abhi Ahmad, SMK 3 Sigi, Sigi, Website pribadi">
   <meta name="author" content="Abhi Ahmad, Abay">
-  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/5527/5527216.png">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat&family=Orbitron:wght@500&family=Rampart+One&family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5527/5527216.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Luckiest+Guy&family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       font-family: 'Poppins', sans-serif;
       color: white;
-      min-height: 100vh;
       padding-top: 80px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      position: relative;
+      min-height: 100vh;
       overflow-x: hidden;
+      text-align: center;
+      background-color: black;
+      position: relative;
     }
 
-    body::before {
-      content: "";
+    .bg-slider {
       position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.5);
-      z-index: -1;
-    }
-
-    .background-slider {
-      position: fixed;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 500%;
       height: 100%;
       display: flex;
-      animation: slideBg 60s linear infinite;
-      z-index: -2;
+      z-index: -1;
+      transition: transform 2s ease-in-out;
     }
 
-    .background-slider img {
+    .bg-slider img {
       width: 20%;
       height: 100%;
       object-fit: cover;
-      filter: blur(6px) brightness(0.4);
-    }
-
-    @keyframes slideBg {
-      0% { transform: translateX(0%); }
-      100% { transform: translateX(-80%); }
+      filter: brightness(0.4) blur(5px);
     }
 
     .rexus-navbar {
@@ -61,22 +46,26 @@
       top: 0;
       width: 100%;
       height: 60px;
-      background-color: white;
+      background: white;
       color: black;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       padding: 0 30px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
       z-index: 1000;
     }
 
-    .rexus-navbar .logo img { height: 40px; margin-right: 10px; }
     .rexus-navbar .logo {
-      font-weight: bold;
-      font-size: 1.2em;
       display: flex;
       align-items: center;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .rexus-navbar .logo img {
+      height: 40px;
+      margin-right: 10px;
     }
 
     .rexus-navbar input[type="text"] {
@@ -85,92 +74,70 @@
       border: 1px solid #ccc;
     }
 
-    .container { animation: fadeIn 1s ease-in-out; max-width: 800px; }
+    .container {
+      animation: fadeIn 1s ease-in-out;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
 
     .welcome-text {
       font-family: 'Luckiest Guy', cursive;
-      font-size: 2.6em;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 5px;
-      margin-bottom: 10px;
-    }
-
-    .welcome-text span {
-      animation: colorLoop 2s infinite alternate;
-    }
-
-    @keyframes colorLoop {
-      0% { color: red; }
-      20% { color: orange; }
-      40% { color: yellow; }
-      60% { color: green; }
-      80% { color: blue; }
-      100% { color: violet; }
+      font-size: 2.4em;
+      margin: 20px 0;
     }
 
     .foto-abay {
       width: 180px;
       height: 180px;
       border-radius: 50%;
-      border: 8px solid red;
-      animation: borderColorLoop 3s infinite;
+      border: 6px solid red;
       margin: 20px auto;
-      display: block;
       object-fit: cover;
       cursor: pointer;
+      transition: transform 0.3s;
     }
 
-    @keyframes borderColorLoop {
-      0%   { border-color: red; }
-      20%  { border-color: orange; }
-      40%  { border-color: yellow; }
-      60%  { border-color: green; }
-      80%  { border-color: blue; }
-      100% { border-color: violet; }
+    .foto-abay:hover {
+      transform: scale(1.05);
     }
 
-    h1 { font-size: 2.2em; margin-bottom: 10px; font-family: 'Orbitron', sans-serif; }
-    audio { margin-top: 10px; }
+    h1 {
+      font-size: 2em;
+      font-family: 'Orbitron', sans-serif;
+    }
 
     .bio, .description {
-      background-color: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.6);
       padding: 20px;
       border-radius: 10px;
       margin-top: 20px;
       text-align: left;
-      max-width: 800px;
-    }
-
-    .bio p, .description p { margin-bottom: 10px; font-size: 1.1em; }
-    .description p {
-      font-family: 'Caveat', cursive;
-      font-size: 1.3em;
-      color: #fff;
     }
 
     .socials {
-      margin-top: 30px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 30px;
+      margin-top: 30px;
     }
 
     .socials a {
       text-decoration: none;
       color: #00c6ff;
-      font-weight: bold;
       text-align: center;
-      width: 120px;
+      width: 100px;
     }
 
     .socials img {
-      display: block;
-      margin: 8px auto 0;
       width: 40px;
       height: 40px;
+      margin-top: 5px;
     }
 
     .top-icons {
@@ -179,20 +146,16 @@
       right: 10px;
       display: flex;
       gap: 10px;
-      z-index: 999;
-      background-color: rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.3);
       padding: 5px 10px;
       border-radius: 10px;
+      z-index: 999;
     }
 
     .top-icons img {
       width: 28px;
       height: 28px;
-      filter: brightness(1.2);
-      transition: transform 0.3s;
     }
-
-    .top-icons img:hover { transform: scale(1.2); }
 
     #chat-container {
       position: fixed;
@@ -201,17 +164,16 @@
       width: 300px;
       background: white;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      z-index: 1001;
+      font-size: 14px;
       overflow: hidden;
-      font-family: 'Poppins', sans-serif;
+      z-index: 1001;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
 
     #chat-messages {
       max-height: 250px;
       overflow-y: auto;
       padding: 10px;
-      font-size: 14px;
       color: black;
     }
 
@@ -220,18 +182,30 @@
       padding: 10px;
       border: none;
       border-top: 1px solid #ccc;
-      font-size: 14px;
       outline: none;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 20px;
+      border: 5px solid white;
     }
   </style>
 </head>
 <body>
-  <div class="background-slider">
+  <div class="bg-slider" id="bgSlider">
     <img src="Naruto Uzumaki 4K Photo.jpg">
     <img src="download (5).jpg">
     <img src="download (4).jpg">
@@ -241,7 +215,7 @@
 
   <div class="rexus-navbar">
     <div class="logo">
-      <a href="https://smkn3sigi.sch.id" target="_blank"><img src="smk3sigi.png" alt="SMKN 3 SIGI"></a>
+      <img src="smk3sigi.png" alt="SMKN 3 SIGI">
       ABAYBAY16
     </div>
     <input type="text" id="searchBar" placeholder="Search di Google" onkeydown="searchGoogle(event)">
@@ -256,12 +230,7 @@
   </div>
 
   <div class="container">
-    <div class="welcome-text">
-      <span>W</span><span>E</span><span>L</span><span>C</span><span>O</span><span>M</span><span>E</span>
-      <span>&nbsp;</span><span>T</span><span>O</span><span>&nbsp;</span>
-      <span>W</span><span>E</span><span>B</span><span>S</span><span>I</span><span>T</span><span>E</span>
-      <span>&nbsp;</span><span>A</span><span>B</span><span>A</span><span>Y</span>
-    </div>
+    <div class="welcome-text">WELCOME TO WEBSITE ABAY</div>
 
     <img src="abay123.jpg" alt="Foto Abay" class="foto-abay" onclick="openModal()">
 
@@ -342,6 +311,14 @@
         this.value = "";
       }
     });
+
+    // Background slider pelan tiap 5 detik
+    let pos = 0;
+    const bg = document.getElementById("bgSlider");
+    setInterval(() => {
+      pos = (pos + 1) % 5;
+      bg.style.transform = `translateX(-${pos * 20}%)`;
+    }, 5000);
   </script>
 </body>
 </html>
