@@ -3,16 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title> ABHI AHMAD </title>
+  <title>ABHI AHMAD</title>
   <meta name="description" content="Website pribadi Abhi Ahmad dari Porame, Sigi.">
   <meta name="keywords" content="Abaybay16, Abhi Ahmad, SMK 3 Sigi, Sigi, Website pribadi">
-  <meta name="author" content="Abhi Ahmad,Abay">
+  <meta name="author" content="Abhi Ahmad, Abay">
   <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/5527/5527216.png">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat&family=Orbitron:wght@500&family=Rampart+One&family=Luckiest+Guy&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg-image: url('Naruto Uzumaki 4K Photo.jpg');
-    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
@@ -24,24 +21,22 @@
       align-items: center;
       text-align: center;
       position: relative;
+      overflow-x: hidden;
     }
-
     body::before {
       content: "";
       position: fixed;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
       width: 100%;
       height: 100%;
-      background-image: var(--bg-image);
+      background-image: url('Naruto Uzumaki 4K Photo.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      filter: blur(6px) brightness(0.4);
       z-index: -1;
-      opacity: 0.3;
-      transition: background-image 1s ease-in-out;
+      transition: background-image 2s ease-in-out;
     }
-
     .rexus-navbar {
       position: fixed;
       top: 0;
@@ -56,15 +51,17 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
       z-index: 1000;
     }
-
     .rexus-navbar .logo img { height: 40px; margin-right: 10px; }
-    .rexus-navbar .logo { font-weight: bold; font-size: 1.2em; display: flex; align-items: center; }
-    .rexus-navbar .menu { display: flex; gap: 20px; font-size: 0.9em; }
-    .rexus-navbar .menu a {
-      text-decoration: none; color: black; font-weight: 500;
+    .rexus-navbar .logo {
+      font-weight: bold;
+      font-size: 1.2em;
+      display: flex;
+      align-items: center;
     }
     .rexus-navbar input[type="text"] {
-      padding: 5px; border-radius: 5px; border: 1px solid #ccc;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
     }
 
     .container { animation: fadeIn 1s ease-in-out; max-width: 800px; }
@@ -81,13 +78,12 @@
     .welcome-text span {
       animation: colorLoop 2s infinite alternate;
     }
-
     @keyframes colorLoop {
-      0%   { color: red; }
-      20%  { color: orange; }
-      40%  { color: yellow; }
-      60%  { color: green; }
-      80%  { color: blue; }
+      0% { color: red; }
+      20% { color: orange; }
+      40% { color: yellow; }
+      60% { color: green; }
+      80% { color: blue; }
       100% { color: violet; }
     }
 
@@ -102,7 +98,6 @@
       object-fit: cover;
       cursor: pointer;
     }
-
     @keyframes borderColorLoop {
       0%   { border-color: red; }
       20%  { border-color: orange; }
@@ -112,39 +107,23 @@
       100% { border-color: violet; }
     }
 
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      left: 0; top: 0;
-      width: 100vw; height: 100vh;
-      background-color: rgba(0,0,0,0.8);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal img {
-      max-width: 60%;
-      max-height: 80%;
-      border-radius: 20px;
-      box-shadow: 0 0 20px #fff;
-      animation: fadeIn 0.3s ease-in-out;
-    }
-
     h1 { font-size: 2.2em; margin-bottom: 10px; font-family: 'Orbitron', sans-serif; }
     audio { margin-top: 10px; }
 
     .bio, .description {
-      background-color: rgba(255,255,255,0.1);
+      background-color: rgba(0,0,0,0.6);
       padding: 20px;
       border-radius: 10px;
       margin-top: 20px;
       text-align: left;
       max-width: 800px;
     }
-
     .bio p, .description p { margin-bottom: 10px; font-size: 1.1em; }
-    .description p { font-family: 'Caveat', cursive; font-size: 1.3em; color: #fff; }
+    .description p {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3em;
+      color: #fff;
+    }
 
     .socials {
       margin-top: 30px;
@@ -153,7 +132,6 @@
       justify-content: center;
       gap: 30px;
     }
-
     .socials a {
       text-decoration: none;
       color: #00c6ff;
@@ -161,7 +139,6 @@
       text-align: center;
       width: 120px;
     }
-
     .socials img {
       display: block;
       margin: 8px auto 0;
@@ -180,14 +157,12 @@
       padding: 5px 10px;
       border-radius: 10px;
     }
-
     .top-icons img {
       width: 28px;
       height: 28px;
       filter: brightness(1.2);
       transition: transform 0.3s;
     }
-
     .top-icons img:hover { transform: scale(1.2); }
 
     #chat-container {
@@ -202,7 +177,6 @@
       overflow: hidden;
       font-family: 'Poppins', sans-serif;
     }
-
     #chat-messages {
       max-height: 250px;
       overflow-y: auto;
@@ -210,7 +184,6 @@
       font-size: 14px;
       color: black;
     }
-
     #chat-input {
       width: 100%;
       padding: 10px;
@@ -227,7 +200,6 @@
   </style>
 </head>
 <body>
-  <!-- Navbar -->
   <div class="rexus-navbar">
     <div class="logo">
       <a href="https://smkn3sigi.sch.id" target="_blank"><img src="smk3sigi.png" alt="SMKN 3 SIGI"></a>
@@ -236,7 +208,6 @@
     <input type="text" id="searchBar" placeholder="Search di Google" onkeydown="searchGoogle(event)">
   </div>
 
-  <!-- Ikon -->
   <div class="top-icons">
     <a href="https://www.linux.org" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"></a>
     <a href="https://github.com" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"></a>
@@ -245,13 +216,15 @@
     <a href="https://awsacademy.instructure.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/873/873120.png"></a>
   </div>
 
-  <!-- Konten -->
   <div class="container">
     <div class="welcome-text">
       <span>W</span><span>E</span><span>L</span><span>C</span><span>O</span><span>M</span><span>E</span>
-      <span>&nbsp;</span><span>T</span><span>O</span><span>&nbsp;</span>
+      <span>&nbsp;</span>
+      <span>T</span><span>O</span>
+      <span>&nbsp;</span>
       <span>W</span><span>E</span><span>B</span><span>S</span><span>I</span><span>T</span><span>E</span>
-      <span>&nbsp;</span><span>A</span><span>B</span><span>A</span><span>Y</span>
+      <span>&nbsp;</span>
+      <span>A</span><span>B</span><span>A</span><span>Y</span>
     </div>
 
     <img src="abay123.jpg" alt="Foto Abay" class="foto-abay" onclick="openModal()">
@@ -298,10 +271,16 @@
       if (event.key === "Enter") {
         const query = document.getElementById("searchBar").value.trim();
         if (query !== "") {
-          const googleURL = "https://www.google.com/search?q=" + encodeURIComponent(query);
-          window.open(googleURL, "_blank");
+          window.open("https://www.google.com/search?q=" + encodeURIComponent(query), "_blank");
         }
       }
+    }
+
+    function openModal() {
+      document.getElementById("fotoModal").style.display = "flex";
+    }
+    function closeModal() {
+      document.getElementById("fotoModal").style.display = "none";
     }
 
     document.getElementById("chat-input").addEventListener("keypress", function (e) {
@@ -312,12 +291,11 @@
         fetch("https://abay-chatbot.abiahmad32.replit.dev", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ msg: msg })
+          body: JSON.stringify({ msg })
         })
         .then(res => res.json())
         .then(data => {
-          const reply = data.reply || "Aku bingung jawabnya 😭";
-          chatBox.innerHTML += `<div><b>AI:</b> ${reply}</div>`;
+          chatBox.innerHTML += `<div><b>AI:</b> ${data.reply || "Aku bingung jawabnya 😭"}</div>`;
           chatBox.scrollTop = chatBox.scrollHeight;
         })
         .catch(() => {
@@ -327,14 +305,7 @@
       }
     });
 
-    function openModal() {
-      document.getElementById("fotoModal").style.display = "flex";
-    }
-
-    function closeModal() {
-      document.getElementById("fotoModal").style.display = "none";
-    }
-
+    // 🔄 Background berganti otomatis
     const images = [
       'Naruto Uzumaki 4K Photo.jpg',
       'download (5).jpg',
@@ -342,10 +313,11 @@
       '(13) Beautiful Japan scenes 🌸⛩️🇯🇵.jpg',
       'Itachi Uchiha HD live wallpaper.jpg'
     ];
-    let bgIndex = 0;
+    let index = 0;
     setInterval(() => {
-      bgIndex = (bgIndex + 1) % images.length;
-      document.documentElement.style.setProperty('--bg-image', `url('${images[bgIndex]}')`);
+      document.body.style.setProperty('--bg-image', `url(${images[index]})`);
+      document.querySelector('body::before').style.backgroundImage = `url(${images[index]})`;
+      index = (index + 1) % images.length;
     }, 10000);
   </script>
 </body>
