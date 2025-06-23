@@ -23,20 +23,39 @@
       position: relative;
       overflow-x: hidden;
     }
+
     body::before {
       content: "";
       position: fixed;
       top: 0; left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('Naruto Uzumaki 4K Photo.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      filter: blur(6px) brightness(0.4);
+      background: rgba(0,0,0,0.5);
       z-index: -1;
-      transition: background-image 2s ease-in-out;
     }
+
+    .background-slider {
+      position: fixed;
+      top: 0; left: 0;
+      width: 500%;
+      height: 100%;
+      display: flex;
+      animation: slideBg 60s linear infinite;
+      z-index: -2;
+    }
+
+    .background-slider img {
+      width: 20%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(6px) brightness(0.4);
+    }
+
+    @keyframes slideBg {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-80%); }
+    }
+
     .rexus-navbar {
       position: fixed;
       top: 0;
@@ -51,6 +70,7 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
       z-index: 1000;
     }
+
     .rexus-navbar .logo img { height: 40px; margin-right: 10px; }
     .rexus-navbar .logo {
       font-weight: bold;
@@ -58,6 +78,7 @@
       display: flex;
       align-items: center;
     }
+
     .rexus-navbar input[type="text"] {
       padding: 5px;
       border-radius: 5px;
@@ -75,9 +96,11 @@
       gap: 5px;
       margin-bottom: 10px;
     }
+
     .welcome-text span {
       animation: colorLoop 2s infinite alternate;
     }
+
     @keyframes colorLoop {
       0% { color: red; }
       20% { color: orange; }
@@ -98,6 +121,7 @@
       object-fit: cover;
       cursor: pointer;
     }
+
     @keyframes borderColorLoop {
       0%   { border-color: red; }
       20%  { border-color: orange; }
@@ -118,6 +142,7 @@
       text-align: left;
       max-width: 800px;
     }
+
     .bio p, .description p { margin-bottom: 10px; font-size: 1.1em; }
     .description p {
       font-family: 'Caveat', cursive;
@@ -132,6 +157,7 @@
       justify-content: center;
       gap: 30px;
     }
+
     .socials a {
       text-decoration: none;
       color: #00c6ff;
@@ -139,6 +165,7 @@
       text-align: center;
       width: 120px;
     }
+
     .socials img {
       display: block;
       margin: 8px auto 0;
@@ -157,12 +184,14 @@
       padding: 5px 10px;
       border-radius: 10px;
     }
+
     .top-icons img {
       width: 28px;
       height: 28px;
       filter: brightness(1.2);
       transition: transform 0.3s;
     }
+
     .top-icons img:hover { transform: scale(1.2); }
 
     #chat-container {
@@ -177,6 +206,7 @@
       overflow: hidden;
       font-family: 'Poppins', sans-serif;
     }
+
     #chat-messages {
       max-height: 250px;
       overflow-y: auto;
@@ -184,6 +214,7 @@
       font-size: 14px;
       color: black;
     }
+
     #chat-input {
       width: 100%;
       padding: 10px;
@@ -200,6 +231,14 @@
   </style>
 </head>
 <body>
+  <div class="background-slider">
+    <img src="Naruto Uzumaki 4K Photo.jpg">
+    <img src="download (5).jpg">
+    <img src="download (4).jpg">
+    <img src="(13) Beautiful Japan scenes 🌸⛩️🇯🇵.jpg">
+    <img src="Itachi Uchiha HD live wallpaper.jpg">
+  </div>
+
   <div class="rexus-navbar">
     <div class="logo">
       <a href="https://smkn3sigi.sch.id" target="_blank"><img src="smk3sigi.png" alt="SMKN 3 SIGI"></a>
@@ -219,15 +258,13 @@
   <div class="container">
     <div class="welcome-text">
       <span>W</span><span>E</span><span>L</span><span>C</span><span>O</span><span>M</span><span>E</span>
-      <span>&nbsp;</span>
-      <span>T</span><span>O</span>
-      <span>&nbsp;</span>
+      <span>&nbsp;</span><span>T</span><span>O</span><span>&nbsp;</span>
       <span>W</span><span>E</span><span>B</span><span>S</span><span>I</span><span>T</span><span>E</span>
-      <span>&nbsp;</span>
-      <span>A</span><span>B</span><span>A</span><span>Y</span>
+      <span>&nbsp;</span><span>A</span><span>B</span><span>A</span><span>Y</span>
     </div>
 
     <img src="abay123.jpg" alt="Foto Abay" class="foto-abay" onclick="openModal()">
+
     <audio controls autoplay loop>
       <source src="DJ SOUND JJ SEREM V8 FUL BAS KANE COCOK BUAT DI KAMAR MENGKANE JEDAGJEDUG VIRAL TIKTOK TERBARU 2025🎧.mp3" type="audio/mpeg">
     </audio>
@@ -279,6 +316,7 @@
     function openModal() {
       document.getElementById("fotoModal").style.display = "flex";
     }
+
     function closeModal() {
       document.getElementById("fotoModal").style.display = "none";
     }
@@ -304,21 +342,6 @@
         this.value = "";
       }
     });
-
-    // 🔄 Background berganti otomatis
-    const images = [
-      'Naruto Uzumaki 4K Photo.jpg',
-      'download (5).jpg',
-      'download (4).jpg',
-      '(13) Beautiful Japan scenes 🌸⛩️🇯🇵.jpg',
-      'Itachi Uchiha HD live wallpaper.jpg'
-    ];
-    let index = 0;
-    setInterval(() => {
-      document.body.style.setProperty('--bg-image', `url(${images[index]})`);
-      document.querySelector('body::before').style.backgroundImage = `url(${images[index]})`;
-      index = (index + 1) % images.length;
-    }, 10000);
   </script>
 </body>
 </html>
