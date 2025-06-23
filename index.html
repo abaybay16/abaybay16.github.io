@@ -9,12 +9,14 @@
   <meta name="author" content="Abhi Ahmad">
   <meta name="google-site-verification" content="5wb5iD6Qd_4n-5-jDRWJ-uYwutHZPvZMRiGgRAYQ81A" />
   <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/5527/5527216.png">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat&family=Orbitron:wght@500&family=Rampart+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat&family=Orbitron:wght@500&family=Rampart+One&family=Luckiest+Guy&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #141e30, #243b55);
+      background: linear-gradient(-45deg, #1e3c72, #2a5298, #1e3c72, #2a5298);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
       color: white;
       min-height: 100vh;
       padding-top: 80px;
@@ -22,6 +24,11 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
     .rexus-navbar {
       position: fixed;
@@ -61,16 +68,19 @@
       margin-bottom: 30px;
     }
     .welcome-text {
-      font-family: 'Rampart One', cursive;
-      font-size: 2.5em;
+      font-family: 'Luckiest Guy', cursive;
+      font-size: 2.8em;
       font-weight: bold;
       white-space: nowrap;
-      position: absolute;
-      animation: moveText 12s linear infinite;
-      background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet);
+      animation: rainbow 3s linear infinite, moveText 15s linear infinite;
       background-size: 400%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+    @keyframes rainbow {
+      0% { background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet); }
+      50% { background: linear-gradient(to right, violet, blue, cyan, green, yellow, orange, red); }
+      100% { background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet); }
     }
     @keyframes moveText {
       0% { left: 100%; }
@@ -80,6 +90,9 @@
       font-size: 2.2em;
       margin-bottom: 10px;
       font-family: 'Orbitron', sans-serif;
+    }
+    audio {
+      margin-top: 10px;
     }
     .bio {
       background-color: rgba(255, 255, 255, 0.1);
@@ -220,6 +233,10 @@
     <div class="welcome-wrapper">
       <div class="welcome-text">WELCOME TO WEBSITE ABAY</div>
     </div>
+    <audio controls autoplay loop>
+      <source src="https://www.bensound.com/bensound-music/bensound-creativeminds.mp3" type="audio/mpeg">
+      Browser kamu tidak mendukung audio tag.
+    </audio>
     <h1>Halo, Saya Abhi Ahmad 👋</h1>
     <p>Selamat datang di website pribadi saya!</p>
     <div class="bio">
