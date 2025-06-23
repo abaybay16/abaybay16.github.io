@@ -62,29 +62,27 @@
     }
     .welcome-wrapper {
       width: 100%;
-      overflow: hidden;
-      position: relative;
-      height: 60px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
     .welcome-text {
       font-family: 'Luckiest Guy', cursive;
-      font-size: 2.8em;
-      font-weight: bold;
-      white-space: nowrap;
-      animation: rainbow 3s linear infinite, moveText 15s linear infinite;
-      background-size: 400%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size: 2.6em;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5px;
+      margin-bottom: 10px;
     }
-    @keyframes rainbow {
-      0% { background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet); }
-      50% { background: linear-gradient(to right, violet, blue, cyan, green, yellow, orange, red); }
-      100% { background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet); }
+    .welcome-text span {
+      animation: colorLoop 2s infinite alternate;
     }
-    @keyframes moveText {
-      0% { left: 100%; }
-      100% { left: -100%; }
+    @keyframes colorLoop {
+      0%   { color: red; }
+      20%  { color: orange; }
+      40%  { color: yellow; }
+      60%  { color: green; }
+      80%  { color: blue; }
+      100% { color: violet; }
     }
     h1 {
       font-size: 2.2em;
@@ -231,12 +229,21 @@
 
   <div class="container">
     <div class="welcome-wrapper">
-      <div class="welcome-text">WELCOME TO WEBSITE ABAY</div>
+      <div class="welcome-text">
+        <span>W</span><span>E</span><span>L</span><span>C</span><span>O</span><span>M</span><span>E</span>
+        <span>&nbsp;</span>
+        <span>T</span><span>O</span>
+        <span>&nbsp;</span>
+        <span>W</span><span>E</span><span>B</span><span>S</span><span>I</span><span>T</span><span>E</span>
+        <span>&nbsp;</span>
+        <span>A</span><span>B</span><span>A</span><span>Y</span>
+      </div>
+      <audio controls autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-creativeminds.mp3" type="audio/mpeg">
+        Browser kamu tidak mendukung audio tag.
+      </audio>
     </div>
-    <audio controls autoplay loop>
-      <source src="https://www.bensound.com/bensound-music/bensound-creativeminds.mp3" type="audio/mpeg">
-      Browser kamu tidak mendukung audio tag.
-    </audio>
+
     <h1>Halo, Saya Abhi Ahmad 👋</h1>
     <p>Selamat datang di website pribadi saya!</p>
     <div class="bio">
