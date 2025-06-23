@@ -1,9 +1,11 @@
-<!-- kamu tinggal copy-paste isi ini ke GitHub Pages kamu -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Website pribadi Abhi Ahmad dari Porame, Sigi. Temukan info tentang saya, proyek, sosial media, dan chatbot AI.">
+  <meta name="keywords" content="Abaybay16, Abhi Ahmad, SMK 3 Sigi, Sigi, Website pribadi, Chatbot AI, Sulawesi Tengah">
+  <meta name="author" content="Abhi Ahmad">
   <title>Abaybay16 | Website Pribadi</title>
 
   <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/5527/5527216.png">
@@ -250,7 +252,6 @@
     </div>
   </div>
 
-  <!-- Chatbot AI -->
   <div id="chat-container">
     <div id="chat-messages">
       <div><b>AI:</b> Hai! Aku Chatbot buatan Abay 🧠✨</div>
@@ -276,7 +277,7 @@
         const chatBox = document.getElementById("chat-messages");
         chatBox.innerHTML += `<div><b>Kamu:</b> ${msg}</div>`;
 
-          fetch("https://abay-chatbot.abiahmad32.replit.dev", 
+        fetch("https://abay-chatbot.abiahmad32.replit.dev", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ msg: msg })
