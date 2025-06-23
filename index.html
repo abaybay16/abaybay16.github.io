@@ -13,9 +13,6 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(-45deg, #1e3c72, #2a5298, #1e3c72, #2a5298);
-      background-size: 400% 400%;
-      animation: gradientBG 10s ease infinite;
       color: white;
       min-height: 100vh;
       padding-top: 80px;
@@ -23,12 +20,24 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
+      position: relative;
     }
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+      opacity: 0.2;
+      transition: background-image 1s ease-in-out;
     }
+
     .rexus-navbar {
       position: fixed;
       top: 0;
@@ -43,6 +52,7 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
       z-index: 1000;
     }
+
     .rexus-navbar .logo img { height: 40px; margin-right: 10px; }
     .rexus-navbar .logo { font-weight: bold; font-size: 1.2em; display: flex; align-items: center; }
     .rexus-navbar .menu { display: flex; gap: 20px; font-size: 0.9em; }
@@ -67,9 +77,11 @@
       gap: 5px;
       margin-bottom: 10px;
     }
+
     .welcome-text span {
       animation: colorLoop 2s infinite alternate;
     }
+
     @keyframes colorLoop {
       0%   { color: red; }
       20%  { color: orange; }
@@ -90,6 +102,7 @@
       object-fit: cover;
       cursor: pointer;
     }
+
     @keyframes borderColorLoop {
       0%   { border-color: red; }
       20%  { border-color: orange; }
@@ -103,14 +116,13 @@
       display: none;
       position: fixed;
       z-index: 9999;
-      left: 0;
-      top: 0;
-      width: 100vw;
-      height: 100vh;
+      left: 0; top: 0;
+      width: 100vw; height: 100vh;
       background-color: rgba(0,0,0,0.8);
       justify-content: center;
       align-items: center;
     }
+
     .modal img {
       max-width: 60%;
       max-height: 80%;
@@ -130,6 +142,7 @@
       text-align: left;
       max-width: 800px;
     }
+
     .bio p, .description p { margin-bottom: 10px; font-size: 1.1em; }
     .description p { font-family: 'Caveat', cursive; font-size: 1.3em; color: #fff; }
 
@@ -140,6 +153,7 @@
       justify-content: center;
       gap: 30px;
     }
+
     .socials a {
       text-decoration: none;
       color: #00c6ff;
@@ -147,6 +161,7 @@
       text-align: center;
       width: 120px;
     }
+
     .socials img {
       display: block;
       margin: 8px auto 0;
@@ -165,12 +180,14 @@
       padding: 5px 10px;
       border-radius: 10px;
     }
+
     .top-icons img {
       width: 28px;
       height: 28px;
       filter: brightness(1.2);
       transition: transform 0.3s;
     }
+
     .top-icons img:hover { transform: scale(1.2); }
 
     #chat-container {
@@ -185,6 +202,7 @@
       overflow: hidden;
       font-family: 'Poppins', sans-serif;
     }
+
     #chat-messages {
       max-height: 250px;
       overflow-y: auto;
@@ -192,6 +210,7 @@
       font-size: 14px;
       color: black;
     }
+
     #chat-input {
       width: 100%;
       padding: 10px;
@@ -213,8 +232,7 @@
       <a href="https://smkn3sigi.sch.id" target="_blank"><img src="smk3sigi.png" alt="SMKN 3 SIGI"></a>
       ABAYBAY16
     </div>
-      <input type="text" id="searchBar" placeholder="Search di Google" onkeydown="searchGoogle(event)">
-    </div>
+    <input type="text" id="searchBar" placeholder="Search di Google" onkeydown="searchGoogle(event)">
   </div>
 
   <div class="top-icons">
@@ -238,7 +256,7 @@
 
     <img src="abay123.jpg" alt="Foto Abay" class="foto-abay" onclick="openModal()">
     <audio controls autoplay loop>
-      <source src="DJ SOUND JJ SEREM V8 FUL BAS KANE COCOK BUAT DI KAMAR MENGKANE JEDAGJEDUG VIRAL TIKTOK TERBARU 2025🎧.mp3" type="audio/mpeg">
+      <source src="DJ SOUND JJ.mp3" type="audio/mpeg">
     </audio>
 
     <h1>Halo, Saya Abhi Ahmad 👋</h1>
@@ -312,9 +330,25 @@
     function openModal() {
       document.getElementById("fotoModal").style.display = "flex";
     }
+
     function closeModal() {
       document.getElementById("fotoModal").style.display = "none";
     }
+
+    // 🔄 Background otomatis berganti
+    const images = [
+      'bg1.jpg',
+      'bg2.jpg',
+      'bg3.jpg',
+      'bg4.jpg',
+      'bg5.jpg'
+    ];
+    let bgIndex = 0;
+    setInterval(() => {
+      document.body.style.setProperty('--bg-image', `url(${images[bgIndex]})`);
+      document.querySelector('body::before').style.backgroundImage = `url(${images[bgIndex]})`;
+      bgIndex = (bgIndex + 1) % images.length;
+    }, 10000);
   </script>
 </body>
 </html>
