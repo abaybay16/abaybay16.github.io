@@ -84,14 +84,30 @@
       80%  { color: blue; }
       100% { color: violet; }
     }
+    .foto-abay {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 8px solid red;
+      animation: borderColorLoop 3s infinite;
+      margin: 20px auto;
+      display: block;
+      object-fit: cover;
+    }
+    @keyframes borderColorLoop {
+      0%   { border-color: red; }
+      20%  { border-color: orange; }
+      40%  { border-color: yellow; }
+      60%  { border-color: green; }
+      80%  { border-color: blue; }
+      100% { border-color: violet; }
+    }
     h1 {
       font-size: 2.2em;
       margin-bottom: 10px;
       font-family: 'Orbitron', sans-serif;
     }
-    audio {
-      margin-top: 10px;
-    }
+    audio { margin-top: 10px; }
     .bio {
       background-color: rgba(255, 255, 255, 0.1);
       padding: 20px;
@@ -238,6 +254,9 @@
         <span>&nbsp;</span>
         <span>A</span><span>B</span><span>A</span><span>Y</span>
       </div>
+
+      <img src="abay123.jpg" alt="Foto Abay" class="foto-abay">
+
       <audio controls autoplay loop>
         <source src="DJ SOUND JJ SEREM V8 FUL BAS KANE COCOK BUAT DI KAMAR MENGKANE JEDAGJEDUG VIRAL TIKTOK TERBARU 2025🎧.mp3" type="audio/mpeg">
         Browser kamu tidak mendukung audio tag.
@@ -300,7 +319,7 @@
         })
         .catch(error => {
           console.error("Error:", error);
-          chatBox.innerHTML += `<div><b>AI:</b> Gagal koneksi ke Replit 😭</div>`;
+          chatBox.innerHTML += `<div><b>AI:</b>bilang dulu abi ganteng  😭</div>`;
         });
         this.value = "";
       }
