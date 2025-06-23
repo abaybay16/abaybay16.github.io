@@ -3,20 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Abaybay16 | Website Pribadi</title>
-  <meta name="description" content="Website pribadi Abhi Ahmad dari Porame, Sigi. Temukan info tentang saya, proyek, sosial media, dan chatbot AI.">
-  <meta name="keywords" content="Abaybay16, Abhi Ahmad, SMK 3 Sigi, Sigi, Website pribadi, Chatbot AI, Sulawesi Tengah">
-  <meta name="author" content="Abhi Ahmad">
-  <meta name="google-site-verification" content="5wb5iD6Qd_4n-5-jDRWJ-uYwutHZPvZMRiGgRAYQ81A" />
+  <title> ABHI AHMAD </title>
+  <meta name="description" content="Website pribadi Abhi Ahmad dari Porame, Sigi.">
+  <meta name="keywords" content="Abaybay16, Abhi Ahmad, SMK 3 Sigi, Sigi, Website pribadi">
+  <meta name="author" content="Abhi Ahmad,Abay">
   <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/5527/5527216.png">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat&family=Orbitron:wght@500&family=Rampart+One&family=Luckiest+Guy&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(-45deg, #1e3c72, #2a5298, #1e3c72, #2a5298);
-      background-size: 400% 400%;
-      animation: gradientBG 10s ease infinite;
       color: white;
       min-height: 100vh;
       padding-top: 80px;
@@ -24,12 +20,24 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
+      position: relative;
     }
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+      opacity: 0.2;
+      transition: background-image 1s ease-in-out;
     }
+
     .rexus-navbar {
       position: fixed;
       top: 0;
@@ -44,8 +52,9 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
       z-index: 1000;
     }
-    .rexus-navbar .logo { font-weight: bold; font-size: 1.2em; display: flex; align-items: center; }
+
     .rexus-navbar .logo img { height: 40px; margin-right: 10px; }
+    .rexus-navbar .logo { font-weight: bold; font-size: 1.2em; display: flex; align-items: center; }
     .rexus-navbar .menu { display: flex; gap: 20px; font-size: 0.9em; }
     .rexus-navbar .menu a {
       text-decoration: none; color: black; font-weight: 500;
@@ -56,14 +65,9 @@
     .rexus-navbar input[type="text"] {
       padding: 5px; border-radius: 5px; border: 1px solid #ccc;
     }
-    .container {
-      animation: fadeIn 1s ease-in-out;
-      max-width: 800px;
-    }
-    .welcome-wrapper {
-      width: 100%;
-      margin-bottom: 20px;
-    }
+
+    .container { animation: fadeIn 1s ease-in-out; max-width: 800px; }
+
     .welcome-text {
       font-family: 'Luckiest Guy', cursive;
       font-size: 2.6em;
@@ -73,9 +77,11 @@
       gap: 5px;
       margin-bottom: 10px;
     }
+
     .welcome-text span {
       animation: colorLoop 2s infinite alternate;
     }
+
     @keyframes colorLoop {
       0%   { color: red; }
       20%  { color: orange; }
@@ -84,22 +90,62 @@
       80%  { color: blue; }
       100% { color: violet; }
     }
-    h1 {
-      font-size: 2.2em;
-      margin-bottom: 10px;
-      font-family: 'Orbitron', sans-serif;
+
+    .foto-abay {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 8px solid red;
+      animation: borderColorLoop 3s infinite;
+      margin: 20px auto;
+      display: block;
+      object-fit: cover;
+      cursor: pointer;
     }
-    audio {
-      margin-top: 10px;
+
+    @keyframes borderColorLoop {
+      0%   { border-color: red; }
+      20%  { border-color: orange; }
+      40%  { border-color: yellow; }
+      60%  { border-color: green; }
+      80%  { border-color: blue; }
+      100% { border-color: violet; }
     }
-    .bio {
-      background-color: rgba(255, 255, 255, 0.1);
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0;
+      width: 100vw; height: 100vh;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 60%;
+      max-height: 80%;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #fff;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    h1 { font-size: 2.2em; margin-bottom: 10px; font-family: 'Orbitron', sans-serif; }
+    audio { margin-top: 10px; }
+
+    .bio, .description {
+      background-color: rgba(255,255,255,0.1);
       padding: 20px;
       border-radius: 10px;
       margin-top: 20px;
       text-align: left;
+      max-width: 800px;
     }
-    .bio p { margin-bottom: 10px; font-size: 1.1em; }
+
+    .bio p, .description p { margin-bottom: 10px; font-size: 1.1em; }
+    .description p { font-family: 'Caveat', cursive; font-size: 1.3em; color: #fff; }
+
     .socials {
       margin-top: 30px;
       display: flex;
@@ -107,21 +153,22 @@
       justify-content: center;
       gap: 30px;
     }
+
     .socials a {
       text-decoration: none;
       color: #00c6ff;
       font-weight: bold;
-      transition: 0.3s;
       text-align: center;
       width: 120px;
     }
-    .socials a:hover { color: #fff; }
+
     .socials img {
       display: block;
       margin: 8px auto 0;
       width: 40px;
       height: 40px;
     }
+
     .top-icons {
       position: fixed;
       top: 70px;
@@ -133,44 +180,16 @@
       padding: 5px 10px;
       border-radius: 10px;
     }
+
     .top-icons img {
       width: 28px;
       height: 28px;
       filter: brightness(1.2);
       transition: transform 0.3s;
     }
+
     .top-icons img:hover { transform: scale(1.2); }
-    .description {
-      background-color: rgba(255, 255, 255, 0.1);
-      margin-top: 40px;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: left;
-      width: 100%;
-      max-width: 800px;
-    }
-    .description h2 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2em;
-      color: #00c6ff;
-      margin-bottom: 10px;
-    }
-    .description p {
-      font-family: 'Caveat', cursive;
-      font-size: 1.3em;
-      line-height: 1.6;
-      color: #ffffff;
-      outline: none;
-    }
-    .description p:focus {
-      background-color: rgba(255, 255, 255, 0.2);
-      padding: 5px;
-      border-radius: 5px;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+
     #chat-container {
       position: fixed;
       bottom: 20px;
@@ -183,6 +202,7 @@
       overflow: hidden;
       font-family: 'Poppins', sans-serif;
     }
+
     #chat-messages {
       max-height: 250px;
       overflow-y: auto;
@@ -190,6 +210,7 @@
       font-size: 14px;
       color: black;
     }
+
     #chat-input {
       width: 100%;
       padding: 10px;
@@ -197,6 +218,11 @@
       border-top: 1px solid #ccc;
       font-size: 14px;
       outline: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -206,17 +232,7 @@
       <a href="https://smkn3sigi.sch.id" target="_blank"><img src="smk3sigi.png" alt="SMKN 3 SIGI"></a>
       ABAYBAY16
     </div>
-    <div class="menu">
-      <a href="#">DATA</a>
-      <a href="#">PRODUK</a>
-      <a href="#">BLOG</a>
-      <a href="#">DUKUNGAN</a>
-    </div>
-    <div class="rexus-right">
-      <a href="#">LOGIN & REGISTER</a>
-      <input type="text" id="searchBar" placeholder="Search di Google" onkeydown="searchGoogle(event)">
-      <span>🔀</span><span>🤍</span><span>🛒</span>
-    </div>
+    <input type="text" id="searchBar" placeholder="Search di Google" onkeydown="searchGoogle(event)">
   </div>
 
   <div class="top-icons">
@@ -228,40 +244,46 @@
   </div>
 
   <div class="container">
-    <div class="welcome-wrapper">
-      <div class="welcome-text">
-        <span>W</span><span>E</span><span>L</span><span>C</span><span>O</span><span>M</span><span>E</span>
-        <span>&nbsp;</span>
-        <span>T</span><span>O</span>
-        <span>&nbsp;</span>
-        <span>W</span><span>E</span><span>B</span><span>S</span><span>I</span><span>T</span><span>E</span>
-        <span>&nbsp;</span>
-        <span>A</span><span>B</span><span>A</span><span>Y</span>
-      </div>
-      <audio controls autoplay loop>
-        <source src="DJ SOUND JJ SEREM V8 FUL BAS KANE COCOK BUAT DI KAMAR MENGKANE JEDAGJEDUG VIRAL TIKTOK TERBARU 2025🎧.mp3" type="audio/mpeg">
-        Browser kamu tidak mendukung audio tag.
-      </audio>
+    <div class="welcome-text">
+      <span>W</span><span>E</span><span>L</span><span>C</span><span>O</span><span>M</span><span>E</span>
+      <span>&nbsp;</span>
+      <span>T</span><span>O</span>
+      <span>&nbsp;</span>
+      <span>W</span><span>E</span><span>B</span><span>S</span><span>I</span><span>T</span><span>E</span>
+      <span>&nbsp;</span>
+      <span>A</span><span>B</span><span>A</span><span>Y</span>
     </div>
+
+    <img src="abay123.jpg" alt="Foto Abay" class="foto-abay" onclick="openModal()">
+    <audio controls autoplay loop>
+      <source src="DJ SOUND JJ SEREM V8 FUL BAS KANE COCOK BUAT DI KAMAR MENGKANE JEDAGJEDUG VIRAL TIKTOK TERBARU 2025🎧.mp3" type="audio/mpeg">
+    </audio>
 
     <h1>Halo, Saya Abhi Ahmad 👋</h1>
     <p>Selamat datang di website pribadi saya!</p>
+
     <div class="bio">
       <p><strong>Nama:</strong> Abhi Ahmad</p>
       <p><strong>Alamat:</strong> Porame</p>
       <p><strong>Kabupaten:</strong> Sigi</p>
       <p><strong>Provinsi:</strong> Sulawesi Tengah</p>
     </div>
+
     <div class="socials">
       <a href="https://facebook.com/Abi Ahmad" target="_blank">Facebook <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
       <a href="https://instagram.com/_abiy16" target="_blank">Instagram <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"></a>
-      <a href="https://tiktok.com/@www.tiktok.com/@bay16on" target="_blank">TikTok <img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png"></a>
+      <a href="https://tiktok.com/Abay_1610" target="_blank">TikTok <img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png"></a>
       <a href="https://wa.me/085820147916" target="_blank">WhatsApp <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"></a>
     </div>
+
     <div class="description">
       <h2>Deskripsi Website</h2>
       <p contenteditable="true" spellcheck="false">Ini adalah website pribadi Abhi Ahmad. Kamu bisa menulis deskripsi apa saja di sini ✍️🔥</p>
     </div>
+  </div>
+
+  <div class="modal" id="fotoModal" onclick="closeModal()">
+    <img src="abay123.jpg" alt="Foto Abay Besar">
   </div>
 
   <div id="chat-container">
@@ -281,8 +303,8 @@
         }
       }
     }
-    const input = document.getElementById("chat-input");
-    input.addEventListener("keypress", function (e) {
+
+    document.getElementById("chat-input").addEventListener("keypress", function (e) {
       if (e.key === "Enter" && this.value.trim() !== "") {
         const msg = this.value;
         const chatBox = document.getElementById("chat-messages");
@@ -298,13 +320,35 @@
           chatBox.innerHTML += `<div><b>AI:</b> ${reply}</div>`;
           chatBox.scrollTop = chatBox.scrollHeight;
         })
-        .catch(error => {
-          console.error("Error:", error);
-          chatBox.innerHTML += `<div><b>AI:</b> Gagal koneksi ke Replit 😭</div>`;
+        .catch(() => {
+          chatBox.innerHTML += `<div><b>AI:</b> Bilang dulu ABI (GANTENG) 😭</div>`;
         });
         this.value = "";
       }
     });
+
+    function openModal() {
+      document.getElementById("fotoModal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("fotoModal").style.display = "none";
+    }
+
+    // 🔄 Background otomatis berganti
+    const images = [
+      'Naruto Uzumaki 4K Photo.jpg',
+      'download (5).jpg',
+      'download (4).jpg',
+      '(13) Beautiful Japan scenes 🌸⛩️🇯🇵.jpg',
+      'Itachi Uchiha HD live wallpaper.jpg'
+    ];
+    let bgIndex = 0;
+    setInterval(() => {
+      document.body.style.setProperty('--bg-image', `url(${images[bgIndex]})`);
+      document.querySelector('body::before').style.backgroundImage = `url(${images[bgIndex]})`;
+      bgIndex = (bgIndex + 1) % images.length;
+    }, 10000);
   </script>
 </body>
 </html>
