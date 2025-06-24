@@ -2,175 +2,390 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Radar Dunia Militer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ABHI AHMAD</title>
+  <meta name="description" content="Website pribadi Abhi Ahmad dari Porame, Sigi.">
+  <meta name="keywords" content="Abaybay16, Abhi Ahmad, SMK 3 Sigi, Sigi, Website pribadi">
+  <meta name="author" content="Abhi Ahmad, Abay">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5527/5527216.png">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins&family=Rubik+Wet+Paint&family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      margin: 0;
-      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      padding-top: 80px;
+      min-height: 100vh;
+      overflow-x: hidden;
       background-color: black;
-      font-family: 'Orbitron', sans-serif;
-      overflow: hidden;
-      color: white;
-    }
-    .radar-container {
       position: relative;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
+      text-align: center;
     }
-    .radar-map {
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      border: 4px solid red;
-      overflow: hidden;
-      margin: auto;
-      position: relative;
-      animation: spin 20s linear infinite;
-      box-shadow: 0 0 50px red;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    .world-map {
-      width: 100%;
+    .bg-slider {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 500%;
       height: 100%;
-      background: url('https://i.ibb.co/qBRRf6P/map-full-world.png') no-repeat center center/cover;
-      filter: brightness(0.4);
+      display: flex;
+      z-index: -1;
+      transition: transform 2s ease-in-out;
     }
-    .country {
-      position: absolute;
-      font-size: 8px;
-      white-space: nowrap;
-      text-shadow: 0 0 3px black;
-      z-index: 2;
+    .bg-slider img {
+      width: 20%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.4) blur(5px);
     }
-    .country img {
-      width: 12px;
-      vertical-align: middle;
+    .rexus-navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      background: white;
+      color: black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      z-index: 1000;
     }
-    .jet {
-      position: absolute;
-      width: 30px;
-      transition: transform 0.5s ease;
-      z-index: 3;
+    .rexus-navbar .logo {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 1.2em;
     }
-    .explosion {
-      position: absolute;
-      width: 60px;
-      pointer-events: none;
-      animation: explode 0.5s steps(5) forwards;
-    }
-    @keyframes explode {
-      0% { opacity: 1; transform: scale(1); }
-      100% { opacity: 0; transform: scale(2); }
-    }
-    .button-container {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      z-index: 10;
-    }
-    .button-container button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background: red;
-      border: none;
-      border-radius: 10px;
-      color: white;
+    .rexus-navbar .logo img {
+      height: 40px;
+      margin-right: 10px;
       cursor: pointer;
-      box-shadow: 0 0 10px red;
+    }
+    .rexus-navbar input[type="text"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .container {
+      animation: fadeIn 1s ease-in-out;
+      max-width: 800px;
+      margin: auto;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .welcome-text {
+      font-family: 'Rubik Wet Paint', cursive;
+      font-size: 2.6em;
+      margin: 20px 0;
+      letter-spacing: 3px;
+      animation: colorLoop 2s infinite alternate;
+    }
+    @keyframes colorLoop {
+      0%   { color: red; }
+      25%  { color: yellow; }
+      50%  { color: lime; }
+      75%  { color: aqua; }
+      100% { color: violet; }
+    }
+    .foto-abay {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 6px solid red;
+      margin: 20px auto 10px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s;
+      display: block;
+    }
+    .foto-abay:hover {
+      transform: scale(1.05);
+    }
+    .music-player {
+      margin: 10px auto 30px;
+      padding: 15px;
+      background: rgba(255, 0, 0, 0.1);
+      border-radius: 15px;
+      width: fit-content;
+      animation: fireGlow 1s infinite alternate;
+      box-shadow: 0 0 20px rgba(255, 69, 0, 0.7);
+    }
+    @keyframes fireGlow {
+      0% { box-shadow: 0 0 10px red; }
+      50% { box-shadow: 0 0 20px orange; }
+      100% { box-shadow: 0 0 30px yellow; }
+    }
+    h1 {
+      font-size: 2em;
+      font-family: 'Orbitron', sans-serif;
+      margin-top: 10px;
+    }
+    .bio, .description {
+      background: rgba(0,0,0,0.6);
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      text-align: left;
+    }
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .socials a {
+      text-decoration: none;
+      color: #00c6ff;
+      text-align: center;
+      width: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.9em;
+    }
+    .socials img {
+      width: 40px;
+      height: 40px;
+      margin-top: 5px;
+    }
+    .top-icons {
+      position: fixed;
+      top: 70px;
+      right: 10px;
+      display: flex;
+      gap: 10px;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 5px 10px;
+      border-radius: 10px;
+      z-index: 999;
+    }
+    .top-icons img {
+      width: 28px;
+      height: 28px;
+    }
+    .ai-icons {
+      position: fixed;
+      bottom: 330px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1002;
+    }
+    .ai-icons img {
+      width: 35px;
+      height: 35px;
+      border-radius: 10px;
+      background: white;
+      padding: 3px;
+      box-shadow: 0 0 5px rgba(255,255,255,0.5);
+      transition: transform 0.2s;
+    }
+    .ai-icons img:hover {
+      transform: scale(1.1);
+    }
+    #chat-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      background: white;
+      border-radius: 10px;
+      font-size: 14px;
+      overflow: hidden;
+      z-index: 1001;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    #chat-messages {
+      max-height: 250px;
+      overflow-y: auto;
+      padding: 10px;
+      color: black;
+    }
+    #chat-input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-top: 1px solid #ccc;
+      outline: none;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 20px;
+      border: 5px solid white;
+    }
+
+    /* Radar Style */
+    @keyframes sweep {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.1; }
     }
   </style>
 </head>
 <body>
-  <div class="radar-container">
-    <div class="button-container">
-      <button onclick="heckJet()">HECK JET 💥</button>
-    </div>
-    <div class="radar-map">
-      <div class="world-map" id="worldMap"></div>
-    </div>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Fighter-jet-silhouette.svg/64px-Fighter-jet-silhouette.svg.png" class="jet" id="jet1" style="top: 30%; left: 20%;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Fighter-jet-silhouette.svg/64px-Fighter-jet-silhouette.svg.png" class="jet" id="jet2" style="top: 50%; left: 60%;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Fighter-jet-silhouette.svg/64px-Fighter-jet-silhouette.svg.png" class="jet" id="jet3" style="top: 70%; left: 40%;">
+  <div class="bg-slider" id="bgSlider">
+    <img src="Naruto Uzumaki 4K Photo.jpg">
+    <img src="download (5).jpg">
+    <img src="download (4).jpg">
+    <img src="(13) Beautiful Japan scenes 🌸⛩️🇯🇵.jpg">
+    <img src="Itachi Uchiha HD live wallpaper.jpg">
   </div>
 
-  <audio id="explosionSound" src="https://www.fesliyanstudios.com/play-mp3/387" preload="auto"></audio>
+  <div class="rexus-navbar">
+    <div class="logo" onclick="window.open('https://smkn3sigi.sch.id', '_blank')">
+      <img src="smk3sigi.png" alt="SMKN 3 SIGI">
+      ABAYBAY16
+    </div>
+    <input type="text" id="searchBar" placeholder="Search di Google" onkeydown="searchGoogle(event)">
+  </div>
+
+  <div class="top-icons">
+    <a href="https://www.linux.org" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"></a>
+    <a href="https://github.com" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"></a>
+    <a href="https://www.docker.com" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"></a>
+    <a href="https://code.visualstudio.com" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"></a>
+    <a href="https://awsacademy.instructure.com" target="_blank"><img src="aws.jpg"></a>
+  </div>
+
+  <div class="ai-icons">
+    <a href="https://gemini.google.com" target="_blank"><img src="gemini.jpg"></a>
+    <a href="https://chat.openai.com" target="_blank"><img src="GPTchat.jpg"></a>
+    <a href="https://www.blackbox.ai" target="_blank"><img src="https://blackbox.ai/favicon.ico"></a>
+    <a href="https://poe.com" target="_blank"><img src="Poe.jpg"></a>
+  </div>
+
+  <div class="container">
+    <div class="welcome-text">WELCOME TO WEBSITE ABAY</div>
+    <img src="abay123.jpg" alt="Foto Abay" class="foto-abay" onclick="openModal()">
+    <div class="music-player">
+      <audio controls autoplay loop>
+        <source src="DJ SOUND JJ SEREM V8 FUL BAS KANE COCOK BUAT DI KAMAR MENGKANE JEDAGJEDUG VIRAL TIKTOK TERBARU 2025🎧.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+    <h1>Halo, Saya Abhi Ahmad 👋</h1>
+    <p>Selamat datang di website pribadi saya!</p>
+    <div class="bio">
+      <p><strong>Nama:</strong> Abhi Ahmad</p>
+      <p><strong>Alamat:</strong> Porame</p>
+      <p><strong>Kabupaten:</strong> Sigi</p>
+      <p><strong>Provinsi:</strong> Sulawesi Tengah</p>
+    </div>
+    <div class="socials">
+      <a href="https://facebook.com/Abi Ahmad" target="_blank">Facebook<img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
+      <a href="https://instagram.com/_abiy16" target="_blank">Instagram<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"></a>
+      <a href="https://tiktok.com/@Abay_1610" target="_blank">TikTok<img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png"></a>
+      <a href="https://wa.me/085820147916" target="_blank">WhatsApp<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"></a>
+    </div>
+    <div class="description">
+      <h2>Deskripsi Website</h2>
+      <p contenteditable="true" spellcheck="false">Ini adalah website pribadi Abhi Ahmad. Kamu bisa menulis deskripsi apa saja di sini ✍️🔥</p>
+    </div>
+
+    <!-- MAPS PORAME -->
+    <div style="margin-top: 30px;">
+      <h2 style="color: yellow; font-family: 'Orbitron', sans-serif;">Lokasi Desa Porame</h2>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127512.9734358817!2d119.783172!3d-0.9175229!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d8bb470fa81604f%3A0xb6f848e28795cb07!2sPorame%2C%20Sigi%20Biromaru%2C%20Kabupaten%20Sigi%2C%20Sulawesi%20Tengah!5e0!3m2!1sid!2sid!4v1719210000000!5m2!1sid!2sid" 
+        width="100%" 
+        height="400" 
+        style="border:5px solid red; border-radius: 20px; margin-top: 10px;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <!-- RADAR MILITER -->
+    <div style="margin-top: 50px;">
+      <h2 style="color: red; font-family: 'Orbitron', sans-serif;">🔴 Radar Militer Global</h2>
+      <div id="radar" style="margin: 20px auto; width: 300px; height: 300px; border: 6px solid red; border-radius: 50%; position: relative; background: radial-gradient(circle, #021 40%, #000); overflow: hidden;">
+        <div id="sweep" style="position: absolute; width: 100%; height: 100%; background: conic-gradient(rgba(0,255,0,0.1) 0deg, rgba(0,255,0,0.3) 90deg, transparent 90deg 360deg); animation: sweep 2s linear infinite; border-radius: 50%;"></div>
+        <div style="position: absolute; width: 6px; height: 6px; background: red; top: 80px; left: 140px; border-radius: 50%; animation: blink 1s infinite;"></div>
+        <div style="position: absolute; width: 6px; height: 6px; background: lime; top: 200px; left: 220px; border-radius: 50%; animation: blink 2s infinite;"></div>
+      </div>
+      <button onclick="alert('🚀 Target Locked!\nJET TELAH DIHECK!')" style="margin-top: 20px; padding: 10px 20px; font-family: 'Orbitron'; font-weight: bold; font-size: 1em; background: red; color: white; border: none; border-radius: 10px; box-shadow: 0 0 10px red; cursor: pointer;">HECK JET</button>
+    </div>
+  </div>
+
+  <div class="modal" id="fotoModal" onclick="closeModal()">
+    <img src="abay123.jpg" alt="Foto Abay Besar">
+  </div>
+
+  <div id="chat-container">
+    <div id="chat-messages">
+      <div><b>AI:</b> Hai! Aku Chatbot buatan Abay 🧠✨</div>
+    </div>
+    <input type="text" id="chat-input" placeholder="Tulis pesan dan tekan Enter...">
+  </div>
+
+  <footer style="margin-top: 50px; background: #111; color: #ccc; padding: 20px; font-size: 0.9em;">
+    <p>Website ini dibuat oleh <strong>Abhi Ahmad</strong> | &copy; 2025 ABAYBAY16</p>
+    <p>SMK Negeri 3 Sigi | Porame, Sulawesi Tengah</p>
+  </footer>
 
   <script>
-    const countries = [
-      { name: "Indonesia", code: "id", top: "55%", left: "65%" },
-      { name: "Malaysia", code: "my", top: "52%", left: "63%" },
-      { name: "Jepang", code: "jp", top: "35%", left: "80%" },
-      { name: "Amerika", code: "us", top: "30%", left: "20%" },
-      { name: "Kanada", code: "ca", top: "20%", left: "20%" },
-      { name: "Brazil", code: "br", top: "70%", left: "30%" },
-      { name: "Argentina", code: "ar", top: "80%", left: "35%" },
-      { name: "Arab Saudi", code: "sa", top: "50%", left: "55%" },
-      { name: "Turki", code: "tr", top: "45%", left: "50%" },
-      { name: "Iran", code: "ir", top: "48%", left: "52%" },
-      { name: "Pakistan", code: "pk", top: "50%", left: "54%" },
-      { name: "India", code: "in", top: "53%", left: "56%" },
-      { name: "Bangladesh", code: "bd", top: "55%", left: "58%" },
-      { name: "China", code: "cn", top: "40%", left: "60%" },
-      { name: "Rusia", code: "ru", top: "25%", left: "60%" },
-      { name: "Ukraina", code: "ua", top: "35%", left: "50%" },
-      { name: "Jerman", code: "de", top: "32%", left: "45%" },
-      { name: "Prancis", code: "fr", top: "33%", left: "43%" },
-      { name: "Spanyol", code: "es", top: "36%", left: "41%" },
-      { name: "Italia", code: "it", top: "35%", left: "45%" },
-      { name: "Inggris", code: "gb", top: "30%", left: "42%" },
-      { name: "Mesir", code: "eg", top: "48%", left: "49%" },
-      { name: "Afrika Selatan", code: "za", top: "75%", left: "50%" },
-      { name: "Australia", code: "au", top: "80%", left: "75%" },
-      { name: "Yaman", code: "ye", top: "52%", left: "54%" },
-      { name: "Suriah", code: "sy", top: "47%", left: "52%" },
-      { name: "Korea Selatan", code: "kr", top: "38%", left: "75%" },
-      { name: "Israel", code: "il", top: "48%", left: "50%" },
-      { name: "Palestina", code: "ps", top: "48.5%", left: "50.5%" },
-      { name: "Nigeria", code: "ng", top: "60%", left: "45%" },
-    ];
+    function searchGoogle(event) {
+      if (event.key === "Enter") {
+        const query = document.getElementById("searchBar").value.trim();
+        if (query !== "") {
+          window.open("https://www.google.com/search?q=" + encodeURIComponent(query), "_blank");
+        }
+      }
+    }
 
-    const map = document.getElementById("worldMap");
-    countries.forEach(({ name, top, left, code }) => {
-      const div = document.createElement("div");
-      div.className = "country";
-      div.style.top = top;
-      div.style.left = left;
-      div.innerHTML = `<img src="https://flagcdn.com/w40/${code}.png"> ${name}`;
-      map.appendChild(div);
+    function openModal() {
+      document.getElementById("fotoModal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("fotoModal").style.display = "none";
+    }
+
+    document.getElementById("chat-input").addEventListener("keypress", function (e) {
+      if (e.key === "Enter" && this.value.trim() !== "") {
+        const msg = this.value;
+        const chatBox = document.getElementById("chat-messages");
+        chatBox.innerHTML += `<div><b>Kamu:</b> ${msg}</div>`;
+        fetch("https://abay-chatbot.abiahmad32.replit.app/api", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: msg })
+        })
+          .then(res => res.json())
+          .then(data => {
+            chatBox.innerHTML += `<div><b>AI:</b> ${data.response}</div>`;
+            chatBox.scrollTop = chatBox.scrollHeight;
+          });
+        this.value = "";
+      }
     });
 
-    const jets = ["jet1", "jet2", "jet3"].map(id => document.getElementById(id));
-    let flying = true;
-
-    function flyJets() {
-      if (!flying) return;
-      jets.forEach(jet => {
-        let x = Math.random() * (window.innerWidth - 50);
-        let y = Math.random() * (window.innerHeight - 50);
-        jet.style.transform = `translate(${x}px, ${y}px)`;
-      });
-    }
-    setInterval(flyJets, 2000);
-
-    function heckJet() {
-      flying = false;
-      jets.forEach(jet => {
-        let explosion = document.createElement('img');
-        explosion.src = 'https://i.gifer.com/7efs.gif';
-        explosion.className = 'explosion';
-        explosion.style.top = jet.style.top;
-        explosion.style.left = jet.style.left;
-        document.body.appendChild(explosion);
-        jet.style.display = 'none';
-        setTimeout(() => explosion.remove(), 1000);
-      });
-      document.getElementById('explosionSound').play();
-    }
+    let slider = document.getElementById("bgSlider");
+    let index = 0;
+    setInterval(() => {
+      index = (index + 1) % 5;
+      slider.style.transform = `translateX(-${index * 20}%)`;
+    }, 6000);
   </script>
 </body>
 </html>
