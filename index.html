@@ -157,21 +157,6 @@
       height: 40px;
       margin-top: 5px;
     }
-    .top-icons {
-      position: fixed;
-      top: 70px;
-      right: 10px;
-      display: flex;
-      gap: 10px;
-      background: rgba(0, 0, 0, 0.3);
-      padding: 5px 10px;
-      border-radius: 10px;
-      z-index: 999;
-    }
-    .top-icons img {
-      width: 28px;
-      height: 28px;
-    }
     .ai-icons {
       position: fixed;
       bottom: 330px;
@@ -250,32 +235,71 @@
   </style>
 </head>
 <body>
-  <!-- konten asli tetap -->
+  <div class="bg-slider" id="bgSlider">
+    <img src="Naruto Uzumaki 4K Photo.jpg">
+    <img src="download (5).jpg">
+    <img src="download (4).jpg">
+    <img src="(13) Beautiful Japan scenes ✨.jpg">
+    <img src="Itachi Uchiha HD live wallpaper.jpg">
+  </div>
 
-  <!-- Tombol Back to Top -->
+  <div class="rexus-navbar">
+    <div class="logo" onclick="window.open('https://smkn3sigi.sch.id', '_blank')">
+      <img src="smk3sigi.png" alt="SMKN 3 SIGI">
+      ABAYBAY16
+    </div>
+    <input type="text" id="searchBar" placeholder="Search di Google" onkeydown="searchGoogle(event)">
+  </div>
+
+  <div class="container">
+    <div class="welcome-text">WELCOME TO WEBSITE ABAY</div>
+    <img src="abay123.jpg" alt="Foto Abay" class="foto-abay">
+    <div class="music-player">
+      <audio controls autoplay loop>
+        <source src="DJ SOUND.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+    <h1>Halo, Saya Abhi Ahmad 👋</h1>
+    <p>Selamat datang di website pribadi saya!</p>
+  </div>
+
+  <div class="ai-icons">
+    <a href="https://gemini.google.com" target="_blank" title="Gemini adalah AI Google untuk bantu nulis dan coding"><img src="gemini.jpg"></a>
+    <a href="https://chat.openai.com" target="_blank" title="ChatGPT adalah AI dari OpenAI yang bisa jawab apapun"><img src="GPTchat.jpg"></a>
+    <a href="https://www.blackbox.ai" target="_blank" title="Blackbox AI bantu kamu auto-code cepat"><img src="https://blackbox.ai/favicon.ico"></a>
+    <a href="https://poe.com" target="_blank" title="Poe punya banyak AI model sekaligus (Claude, GPT, dsb)"><img src="Poe.jpg"></a>
+  </div>
+
+  <div id="chat-container">
+    <div id="chat-messages">
+      <div><b>AI:</b> Hai! Aku Chatbot buatan Abay 🧠✨</div>
+    </div>
+    <input type="text" id="chat-input" placeholder="Tulis pesan dan tekan Enter...">
+  </div>
+
   <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="back-to-top">⬆️</button>
 
   <script>
-    // Efek Ketik
-    const welcomeText = document.querySelector('.welcome-text');
-    if (welcomeText) {
-      welcomeText.classList.add('typing-text');
+    function searchGoogle(event) {
+      if (event.key === "Enter") {
+        const query = document.getElementById("searchBar").value.trim();
+        if (query !== "") {
+          window.open("https://www.google.com/search?q=" + encodeURIComponent(query), "_blank");
+        }
+      }
     }
 
-    // Dark mode otomatis
     const hour = new Date().getHours();
     if (hour >= 18 || hour < 6) {
       document.body.style.backgroundColor = '#000';
       document.body.style.color = '#fff';
     }
 
-    // Suara AI saat respon
     function playAISound() {
       const audio = new Audio('https://cdn.pixabay.com/audio/2022/03/24/audio_0204b8f15b.mp3');
       audio.play();
     }
 
-    // Deteksi Chat & Suara
     document.getElementById("chat-input").addEventListener("keypress", function (e) {
       if (e.key === "Enter" && this.value.trim() !== "") {
         const msg = this.value;
@@ -295,6 +319,13 @@
         this.value = "";
       }
     });
+
+    let slider = document.getElementById("bgSlider");
+    let index = 0;
+    setInterval(() => {
+      index = (index + 1) % 5;
+      slider.style.transform = `translateX(-${index * 20}%)`;
+    }, 6000);
   </script>
 </body>
 </html>
