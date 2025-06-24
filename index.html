@@ -68,6 +68,13 @@
       margin-right: 10px;
     }
 
+    .rexus-navbar .logo a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: black;
+    }
+
     .rexus-navbar input[type="text"] {
       padding: 5px;
       border-radius: 5px;
@@ -190,6 +197,23 @@
       height: 28px;
     }
 
+    .ai-icons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .ai-icons a img {
+      width: 32px;
+      height: 32px;
+      transition: transform 0.3s;
+    }
+
+    .ai-icons a:hover img {
+      transform: scale(1.2);
+    }
+
     #chat-container {
       position: fixed;
       bottom: 20px;
@@ -248,8 +272,10 @@
 
   <div class="rexus-navbar">
     <div class="logo">
-      <img src="smk3sigi.png" alt="SMKN 3 SIGI">
-      ABAYBAY16
+      <a href="https://smkn3sigi.sch.id" target="_blank">
+        <img src="smk3sigi.png" alt="SMKN 3 SIGI">
+        ABAYBAY16
+      </a>
     </div>
     <input type="text" id="searchBar" placeholder="Search di Google" onkeydown="searchGoogle(event)">
   </div>
@@ -269,7 +295,7 @@
 
     <div class="music-player">
       <audio controls autoplay loop>
-        <source src="DJ SOUND JJ SEREM V8 FUL BAS KANE COCOK BUAT DI KAMAR MENGKANE JEDAGJEDUG VIRAL TIKTOK TERBARU 2025🎧.mp3" type="audio/mpeg">
+        <source src="DJ SOUND JJ SEREM V8 FUL BAS.mp3" type="audio/mpeg">
       </audio>
     </div>
 
@@ -298,6 +324,13 @@
 
   <div class="modal" id="fotoModal" onclick="closeModal()">
     <img src="abay123.jpg" alt="Foto Abay Besar">
+  </div>
+
+  <div class="ai-icons">
+    <a href="https://gemini.google.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Google_Gemini_logo.svg" alt="Gemini"></a>
+    <a href="https://chat.openai.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT"></a>
+    <a href="https://www.blackbox.ai" target="_blank"><img src="https://blackbox.ai/favicon.png" alt="Blackbox AI"></a>
+    <a href="https://poe.com" target="_blank"><img src="https://poe.com/static/favicon.ico" alt="Poe AI"></a>
   </div>
 
   <div id="chat-container">
@@ -347,7 +380,6 @@
       }
     });
 
-    // Background slide
     let pos = 0;
     const bg = document.getElementById("bgSlider");
     setInterval(() => {
