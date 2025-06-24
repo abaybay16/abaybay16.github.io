@@ -10,299 +10,96 @@
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5527/5527216.png">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins&family=Rubik+Wet+Paint&family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      color: white;
-      padding-top: 80px;
-      min-height: 100vh;
-      overflow-x: hidden;
-      background-color: black;
-      position: relative;
-      text-align: center;
-    }
-    .bg-slider {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 500%;
-      height: 100%;
-      display: flex;
-      z-index: -1;
-      transition: transform 2s ease-in-out;
-    }
-    .bg-slider img {
-      width: 20%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(0.4) blur(5px);
-    }
-    .rexus-navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 60px;
-      background: white;
-      color: black;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 30px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      z-index: 1000;
-    }
-    .rexus-navbar .logo {
-      display: flex;
-      align-items: center;
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-    .rexus-navbar .logo img {
-      height: 40px;
-      margin-right: 10px;
-      cursor: pointer;
-    }
-    .rexus-navbar input[type="text"] {
-      padding: 5px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    .container {
-      animation: fadeIn 1s ease-in-out;
-      max-width: 800px;
-      margin: auto;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .welcome-text {
-      font-family: 'Rubik Wet Paint', cursive;
-      font-size: 2.6em;
-      margin: 20px 0;
-      letter-spacing: 3px;
-      animation: colorLoop 2s infinite alternate;
-    }
-    @keyframes colorLoop {
-      0%   { color: red; }
-      25%  { color: yellow; }
-      50%  { color: lime; }
-      75%  { color: aqua; }
-      100% { color: violet; }
-    }
-    .foto-abay {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      border: 6px solid red;
-      margin: 20px auto 10px;
-      object-fit: cover;
-      cursor: pointer;
-      transition: transform 0.3s;
-      display: block;
-    }
-    .foto-abay:hover {
-      transform: scale(1.05);
-    }
-    .music-player {
-      margin: 10px auto 30px;
-      padding: 15px;
-      background: rgba(255, 0, 0, 0.1);
+    .radar-section {
+      margin: 40px auto;
+      max-width: 1000px;
+      border: 4px solid red;
       border-radius: 15px;
-      width: fit-content;
-      animation: fireGlow 1s infinite alternate;
-      box-shadow: 0 0 20px rgba(255, 69, 0, 0.7);
+      overflow: hidden;
+      position: relative;
+      background: #111;
     }
-    @keyframes fireGlow {
-      0% { box-shadow: 0 0 10px red; }
-      50% { box-shadow: 0 0 20px orange; }
-      100% { box-shadow: 0 0 30px yellow; }
+    .radar-section iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
     }
-    h1 {
-      font-size: 2em;
-      font-family: 'Orbitron', sans-serif;
-      margin-top: 10px;
+    .radar-controls {
+      position: absolute;
+      bottom: 15px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
-    .bio, .description {
-      background: rgba(0,0,0,0.6);
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 20px;
-      text-align: left;
+    .radar-controls button {
+      background: red;
+      color: white;
+      border: none;
+      padding: 10px;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 0 10px red;
     }
-    .socials {
+    .radar-controls button:hover {
+      background: darkred;
+    }
+    .flag-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 30px;
-      margin-top: 30px;
+      margin-top: 20px;
+      gap: 10px;
     }
-    .socials a {
-      text-decoration: none;
-      color: #00c6ff;
-      text-align: center;
-      width: 100px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.9em;
-    }
-    .socials img {
+    .flag-container img {
       width: 40px;
-      height: 40px;
-      margin-top: 5px;
-    }
-    .top-icons {
-      position: fixed;
-      top: 70px;
-      right: 10px;
-      display: flex;
-      gap: 10px;
-      background: rgba(0, 0, 0, 0.3);
-      padding: 5px 10px;
-      border-radius: 10px;
-      z-index: 999;
-    }
-    .top-icons img {
-      width: 28px;
-      height: 28px;
-    }
-    .ai-icons {
-      position: fixed;
-      bottom: 330px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 1002;
-    }
-    .ai-icons img {
-      width: 35px;
-      height: 35px;
-      border-radius: 10px;
-      background: white;
-      padding: 3px;
-      box-shadow: 0 0 5px rgba(255,255,255,0.5);
-      transition: transform 0.2s;
-    }
-    .ai-icons img:hover {
-      transform: scale(1.1);
-    }
-    #chat-container {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 300px;
-      background: white;
-      border-radius: 10px;
-      font-size: 14px;
-      overflow: hidden;
-      z-index: 1001;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    }
-    #chat-messages {
-      max-height: 250px;
-      overflow-y: auto;
-      padding: 10px;
-      color: black;
-    }
-    #chat-input {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-top: 1px solid #ccc;
-      outline: none;
-    }
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      justify-content: center;
-      align-items: center;
-      z-index: 2000;
-    }
-    .modal img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 20px;
-      border: 5px solid white;
+      height: 30px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
   </style>
 </head>
 <body>
-  <!-- isi konten web -->
-  <!-- ... semua elemen body kamu sebelumnya tetap di sini (container, foto, audio, dll) ... -->
 
-  <!-- CHATBOT & FOOTER & MODAL tetap di bawah -->
+  <div class="radar-section">
+    <iframe id="radarMap" src="https://www.google.com/maps/d/embed?mid=1nmMAZnsyiL0b_w5LbnmZODgcO6Uue8I&ehbc=2E312F" loading="lazy"></iframe>
+    <div class="radar-controls">
+      <button onclick="heckJet()">HECK JET</button>
+    </div>
+  </div>
+
+  <div class="flag-container">
+    <img src="https://flagcdn.com/w40/id.png" title="Indonesia">
+    <img src="https://flagcdn.com/w40/tr.png" title="Turki">
+    <img src="https://flagcdn.com/w40/ir.png" title="Iran">
+    <img src="https://flagcdn.com/w40/sa.png" title="Arab Saudi">
+    <img src="https://flagcdn.com/w40/eg.png" title="Mesir">
+    <img src="https://flagcdn.com/w40/pk.png" title="Pakistan">
+    <img src="https://flagcdn.com/w40/iq.png" title="Irak">
+    <img src="https://flagcdn.com/w40/sy.png" title="Suriah">
+    <img src="https://flagcdn.com/w40/ps.png" title="Palestina">
+    <img src="https://flagcdn.com/w40/ru.png" title="Rusia">
+  </div>
+
+  <audio id="alertSound" src="https://www.fesliyanstudios.com/play-mp3/4386" preload="auto"></audio>
+  <audio id="aiVoice" src="https://cdn.pixabay.com/audio/2023/10/05/audio_29b3ec8e52.mp3" preload="auto"></audio>
 
   <script>
-    function searchGoogle(event) {
-      if (event.key === "Enter") {
-        const query = document.getElementById("searchBar").value.trim();
-        if (query !== "") {
-          window.open("https://www.google.com/search?q=" + encodeURIComponent(query), "_blank");
-        }
+    function heckJet() {
+      alert("\ud83d\udd25 Jet berhasil dijatuhkan oleh sistem AI! \ud83d\udd25");
+      document.getElementById("aiVoice").play();
+    }
+
+    function simulateIncomingJet() {
+      const detected = true;
+      if (detected) {
+        document.getElementById("alertSound").play();
+        alert("\ud83d\udea8 Deteksi Jet Musuh (Israel) di radar! \ud83d\udea8");
       }
     }
 
-    function openModal() {
-      document.getElementById("fotoModal").style.display = "flex";
-    }
-
-    function closeModal() {
-      document.getElementById("fotoModal").style.display = "none";
-    }
-
-    document.getElementById("chat-input").addEventListener("keypress", function (e) {
-      if (e.key === "Enter" && this.value.trim() !== "") {
-        const msg = this.value;
-        const chatBox = document.getElementById("chat-messages");
-        chatBox.innerHTML += `<div><b>Kamu:</b> ${msg}</div>`;
-        fetch("https://abay-chatbot.abiahmad32.replit.dev", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ msg })
-        })
-        .then(res => res.json())
-        .then(data => {
-          chatBox.innerHTML += `<div><b>AI:</b> ${data.reply || "Aku bingung jawabnya 😭"}</div>`;
-          chatBox.scrollTop = chatBox.scrollHeight;
-        })
-        .catch(() => {
-          chatBox.innerHTML += `<div><b>AI:</b> Bilang dulu (ABI GANTENG) 😭</div>`;
-        });
-        this.value = "";
-      }
-    });
-
-    let pos = 0;
-    const bg = document.getElementById("bgSlider");
-    setInterval(() => {
-      pos = (pos + 1) % 5;
-      bg.style.transform = `translateX(-${pos * 20}%)`;
-    }, 5000);
-
-    // Mode HACKER
-    document.addEventListener("keydown", function(e) {
-      if (e.key === "h") {
-        document.body.style.backgroundColor = "black";
-        document.body.style.color = "#0f0";
-        document.body.style.fontFamily = "monospace";
-        document.body.innerHTML = "<pre style='font-size:20px;'>Mengakses sistem pemerintah...\nBypassing firewall...\nAccess granted untuk ABAY!\n\n💀 SYSTEM HACKED 💀</pre>";
-      }
-    });
-
-    // Suara sambutan AI
-    window.addEventListener("load", () => {
-      const speech = new SpeechSynthesisUtterance("Selamat datang di website Abhi Ahmad dari Porame, SMK 3 Sigi. Kamu keren!");
-      speech.lang = "id-ID";
-      speech.pitch = 1.2;
-      speech.rate = 1;
-      speechSynthesis.speak(speech);
-    });
+    setTimeout(simulateIncomingJet, 8000);
   </script>
 </body>
 </html>
